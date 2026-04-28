@@ -1,8 +1,10 @@
+import './assets/css/index.css'
+
 function App() {
 
   return (
     <>
-     <h1>Code Journey</h1>
+     <h1 className="text-3xl">Code Journey</h1>
     </>
   )
 }

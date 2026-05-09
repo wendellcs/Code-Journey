@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+    .btn {
+        @apply cursor-pointer border border-gray-500 rounded-lg text-lg;
+    }
+}

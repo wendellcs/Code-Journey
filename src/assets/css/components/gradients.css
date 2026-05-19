@@ -13,13 +13,26 @@
             linear-gradient(332.92deg, #040405 16.21%, #0E0E16 83.79%);
     }
 
+    .border-gradient {
+        @apply relative
+    }
+
+    .border-gradient::before {
+        background: linear-gradient(90deg, rgba(122, 36, 87, 0.92) 6.25%, #e35afb 59.13%, #5293e2 72.79%), #FFFFFF;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+
+        @apply absolute inset-0 p-px rounded-[inherit] pointer-events-none mask-exclude content-['']
+    }
+
     .text-gradient {
-        background: linear-gradient(90deg, rgba(226, 14, 187, 0.92) 6.25%, #D773FF 59.13%, #5B8FCE 92.79%);
+        background: linear-gradient(90deg, rgba(226, 14, 187, 0.92) 6.25%, #D773FF 54.13%, #5B8FCE 92.79%);
         @apply bg-clip-text text-transparent;
     }
 
     .text-secondary-gradient {
-        background: linear-gradient(90deg, rgba(122, 36, 87, 0.92) 6.25%, #e35afb 59.13%, #5293e2 79.79%), #FFFFFF;
+        background: linear-gradient(90deg, rgba(122, 36, 87, 0.92) 6.25%, #e35afb 59.13%, #5293e2 72.79%), #FFFFFF;
         @apply bg-clip-text text-transparent;
     }
 

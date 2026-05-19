@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+
+/* Provisório */
+
+@layer components {
+    .module-1 {
+        @apply shadow-glow-mod1
+    }
+
+    .module-1 .number {
+        background-image: linear-gradient(205.99deg, #5789D3 8.4%, #293E5D 91.6%), 
+                            linear-gradient(to right, #4facfe, #00f2fe);
+    }
+
+    .module-1 .picture-border {
+        background-image: linear-gradient(
+            45deg,
+            #199FFF 8%,
+            #741CAE 41%,
+            #003FDD 75%
+        );
+
+        @apply rounded-full p-0.5
+    }
+
+    .module-1 .icon {
+        @apply text-[#4E7ABC]
+    }
+}
+

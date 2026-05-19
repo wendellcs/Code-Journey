@@ -2,7 +2,75 @@
 
 @theme {
     --font-family-style: 'Tektur', sans-serif;
+    
+    /* Modules Card */
+    --color-card: rgba(5, 7, 37, 1);
 
+    /* Number Border Color */
+    --color-number-border-module-1: #8DBBFF; 
+    --color-number-border-module-2: #FFBE45; 
+    --color-number-border-module-3: #FFF28D; 
+    --color-number-border-module-4: #C3FFB4; 
+
+    /* Icon Background Color */
+
+    --color-icon-background-module-1: #4E7ABC;
+    --color-icon-background-module-2: #FF9822;
+    --color-icon-background-module-3: #EFDE17;
+    --color-icon-background-module-4: #0DFF3A;
+
+    /* Wrapper Background Color */
+
+    --color-wrapper-background-module-1: rgba(5, 37, 137, .2);
+    --color-wrapper-background-module-2: rgba(137, 60, 5, .2);
+    --color-wrapper-background-module-3: rgba(137, 117, 5, .2);
+    --color-wrapper-background-module-4: rgba(12, 137, 5, .2);
+
+
+    /* Number Icon Gradient */
+
+    --background-image-number-gradient-module-1: linear-gradient(205.99deg, #5789D3 8.4%, #293E5D 91.6%);
+    --background-image-number-gradient-module-2: linear-gradient(205.99deg, #B85C0B 8.4%, #FACB7F 91.6%);
+    --background-image-number-gradient-module-3: linear-gradient(205.99deg, #C09404 8.4%, #FFF71D 91.6%);
+    --background-image-number-gradient-module-4: linear-gradient(205.99deg, #366D2B 8.4%, #5DEF55 91.6%);
+
+    /* Icon Gradient */
+
+    --background-image-icon-gradient-module-1: linear-gradient(180deg, #3285FF 0%, #2A4772 54%, #9FC6FF 100%);
+    --background-image-icon-gradient-module-2: linear-gradient(180deg, #FFA006 0%, #F5BE71 54%, #FFF394 100%);
+    --background-image-icon-gradient-module-3: linear-gradient(180deg, #FFE941 0%, #DADA12 54%, #F3CF8D 100%);
+    --background-image-icon-gradient-module-4: linear-gradient(180deg, #4FF31D 0%, #0C7910 54%, #136B0B 100%);
+
+    /* Bar Gradient */
+
+    --background-image-bar-gradient-module-1: linear-gradient(180deg, #AECDFB 0%, #408ABF 51%, #052388 100%);
+    --background-image-bar-gradient-module-2: linear-gradient(180deg, #FDD399 0%, #CA972A 51%, #845405 100%);
+    --background-image-bar-gradient-module-3: linear-gradient(180deg, #F6E84C 0%, #FFFA6D 51%, #FBC44D 100%);
+    --background-image-bar-gradient-module-4: linear-gradient(180deg, #6EFF00 0%, #38BE41 51%, #207423 100%);
+
+    /* Card Border Gradient */
+
+    --background-image-card-border-gradient-module-1: linear-gradient(180deg, #5178A7 0%, rgba(0, 0, 0, 0) 100%);
+    --background-image-card-border-gradient-module-2: linear-gradient(180deg, #FFD5A4 0%, rgba(0, 0, 0, 0) 100%);
+    --background-image-card-border-gradient-module-3: linear-gradient(180deg, #FFD5A4 0%, rgba(0, 0, 0, 0) 100%);
+    --background-image-card-border-gradient-module-4: linear-gradient(180deg, #A2FBAF 0%, rgba(0, 0, 0, 0) 100%);
+    
+    /* Image Border Gradient */
+    ----background-image-avatar-border-gradient-module-1: linear-gradient(-35deg, #199FFF 8%, #741CAE 41%, #003FDD 100%);
+    ----background-image-avatar-border-gradient-module-1: linear-gradient(-35deg, #EB8C39 8%, #F6D515 41%, #E4C07E 100%);
+    ----background-image-avatar-border-gradient-module-1: linear-gradient(-35deg, #F8AE6E 8%, #F3DC59 41%, #F6F600 100%);
+    ----background-image-avatar-border-gradient-module-1: linear-gradient(-35deg, #3CFF00 8%, #3B843E 41%, #21C312 100%);
+
+    /* Card Glow */
+    --shadow-glow-module-1: 0 0 30px rgba(130, 218, 250, .6);
+    --shadow-glow-module-2: 0 0 30px rgba(255, 189, 123, .6);
+    --shadow-glow-module-3: 0 0 30px rgba(254, 246, 159, .6);
+    --shadow-glow-module-4: 0 0 30px rgba(102, 235, 95, .6);
+
+    --background-image-grad-mod1: linear-gradient(90deg, #AECDFB 0%, #408ABF 50.96%, #052388 100%);
+
+
+    /* Animations */
     --animate-float: float 8s ease-in-out infinite;
     --animate-float-left: float-aurora-left 8s ease-in-out infinite;
 
@@ -34,4 +102,6 @@
 @import './components/gradients.css';
 @import './components/buttons.css';
 @import './components/stars.css';
+@import './components/cards.css';
 @import './utilities/utilities.css';
+

@@ -3,8 +3,6 @@ import { TiStarOutline } from "react-icons/ti";
 import { ProgressBar } from '../../Components/ProgressBar'
 import { FaCode } from "react-icons/fa";
 
-import exampleImage from '../../assets/images/profile-example.png'
-
 interface Student {
     name: string,
     avatar: string,

@@ -2,15 +2,47 @@
 
 @theme {
     --font-family-style: 'Tektur', sans-serif;
-    
+
+    /* Home Body Gradient */
+    --background-image-background-gradient:
+        radial-gradient(312.06% 72.5% at 59.06% 60.67%, rgba(236, 72, 153, 0.02) 0%, rgba(102, 102, 102, 0) 100%),
+        radial-gradient(106.39% 55.45% at 87.6% 78.95%, rgba(59, 130, 246, 0.1) 0%, rgba(102, 102, 102, 0) 100%),
+        radial-gradient(147.02% 61.07% at 36.77% 34.02%, rgba(168, 85, 247, 0.1) 0%, rgba(99, 50, 145, 0) 100%),
+        linear-gradient(332.92deg, #040405 16.21%, #0E0E16 83.79%);
+
+    --color-secondary: #A39EA8;
+
+    /* Metrics Area */
+
+    --color-metrics-background: #1B1A2E;
+    --background-image-metrics-border-gradient: linear-gradient(90deg, rgba(137, 11, 114, 0.92) 0%, #D773FF 43%, #2E4F78 71%, #ADD2FF 96%);
+
+    /* Growth Indicators */
+
+    --color-increase-indicator: #00FF1E;
+    --color-decrease-indicator: #FF0000;
+
+    /* Metrics icons */
+    --color-purple-icon: #7E06FF;
+    --color-purple-icon-border: #8018A3;
+    --color-purple-icon-background: #2C0B45;
+
+    --color-blue-icon: #9FC8FE;
+    --color-blue-icon-border: #2638FF;
+    --color-blue-icon-background: #171241;
+
+    --color-green-icon: #2DE91C;
+    --color-green-icon-border: #26FF88;
+    --color-green-icon-background: #2E303D;
+
     /* Modules Card */
     --color-card: rgba(5, 7, 37, 1);
 
     /* Number Border Color */
-    --color-number-border-module-1: #8DBBFF; 
-    --color-number-border-module-2: #FFBE45; 
-    --color-number-border-module-3: #FFF28D; 
-    --color-number-border-module-4: #C3FFB4; 
+    --color-number-border-module-1: #8DBBFF;
+    --color-number-border-module-2: #FFBE45;
+    --color-number-border-module-3: #FFF28D;
+    --color-number-border-module-4: #C3FFB4;
 
     /* Icon Background Color */
 
@@ -25,7 +57,6 @@
     --color-wrapper-background-module-2: rgba(137, 60, 5, .2);
     --color-wrapper-background-module-3: rgba(137, 117, 5, .2);
     --color-wrapper-background-module-4: rgba(12, 137, 5, .2);
-
 
     /* Number Icon Gradient */
 
@@ -54,7 +85,7 @@
     --background-image-card-border-gradient-module-2: linear-gradient(180deg, #FFD5A4 0%, rgba(0, 0, 0, 0) 100%);
     --background-image-card-border-gradient-module-3: linear-gradient(180deg, #FFD5A4 0%, rgba(0, 0, 0, 0) 100%);
     --background-image-card-border-gradient-module-4: linear-gradient(180deg, #A2FBAF 0%, rgba(0, 0, 0, 0) 100%);
-    
+
     /* Image Border Gradient */
     ----background-image-avatar-border-gradient-module-1: linear-gradient(-35deg, #199FFF 8%, #741CAE 41%, #003FDD 100%);
     ----background-image-avatar-border-gradient-module-1: linear-gradient(-35deg, #EB8C39 8%, #F6D515 41%, #E4C07E 100%);
@@ -69,12 +100,12 @@
 
     --background-image-grad-mod1: linear-gradient(90deg, #AECDFB 0%, #408ABF 50.96%, #052388 100%);
 
-
     /* Animations */
     --animate-float: float 8s ease-in-out infinite;
     --animate-float-left: float-aurora-left 8s ease-in-out infinite;
 
     @keyframes float {
+
         0%,
         100% {
             transform: translate(0px, 0px) scale(1);
@@ -86,6 +117,7 @@
     }
 
     @keyframes float-aurora-left {
+
         0%,
         100% {
             transform: translate(0px, 0px) scale(1);
@@ -104,4 +136,3 @@
 @import './components/stars.css';
 @import './components/cards.css';
 @import './utilities/utilities.css';
-

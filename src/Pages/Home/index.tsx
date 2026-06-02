@@ -2,6 +2,9 @@ import { Banner } from "../../Components/Banner"
 import { FaRegStar } from "react-icons/fa";
 import { ModuleCard } from "../../Components/ModuleCard";
 
+import { BsGraphUpArrow, BsPeopleFill } from "react-icons/bs";
+import { IoTrophyOutline } from "react-icons/io5";
+
 import profileImage from '../../assets/images/profile-example.png'
 
 export const Home = () => {
@@ -102,7 +105,47 @@ export const Home = () => {
                         />
                     ))}
                 </div>
+
+                <div className="w-min mx-auto rounded-2xl border border-transparent p-10 bg-origin-border [background:linear-gradient(var(--color-metrics-background),var(--color-metrics-background))_padding-box,linear-gradient(90deg,rgba(137,11,114,0.92)_0%,#D773FF_43%,#2E4F78_71%,#ADD2FF_96%)_border-box]">
+                    <div className="text-left flex justify-center gap-10">
+                        <div className="flex items-center gap-5">
+                            <div className="border border-purple-icon-border bg-purple-icon-background rounded-lg">
+                                <BsPeopleFill className="text-5xl m-4 text-purple-icon" />
+                            </div>
+                            <div className="min-w-40">
+                                <p className="text-[28px] font-medium">248</p>
+                                <p className="text-sm text-secondary">Alunos competindo</p>
+
+                                <p className="text-increase-indicator">+20 essa semana</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-5">
+                            <div className="border border-blue-icon-border bg-blue-icon-background rounded-lg">
+                                <IoTrophyOutline className="text-5xl m-4 text-blue-icon" />
+                            </div>
+                            <div className="min-w-40">
+                                <p className="text-[28px] font-medium">1.240</p>
+                                <p className="text-sm text-secondary">Tecnologias dominadas</p>
+
+                                <p className="text-increase-indicator">+85 essa semana</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-5">
+                            <div className="border border-green-icon-border bg-green-icon-background rounded-lg">
+                                <BsGraphUpArrow className="text-5xl m-4 text-green-icon" />
+                            </div>
+                            <div className="min-w-40">
+                                <p className="text-[28px] font-medium">92%</p>
+                                <p className="text-sm text-secondary">Média de evolução</p>
+
+                                <p className="text-increase-indicator">+6% essa semana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     )
 }
+
+

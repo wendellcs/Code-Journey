@@ -1,7 +1,7 @@
 import logo from '../../assets/images/logo-detail.svg'
 export const Footer = () => {
     return (
-        <footer className="h-78 text-center py-10 primary-gradient">
+        <footer className="h-78 text-center py-10 bg-primary-gradient-transparent">
             <img src={logo} alt="Nossa logo" className='mx-auto w-full max-w-60 mb-5' />
             <h2 className='text-[42px] font-medium z-1'>Code <span className='text-gradient'>Journey</span></h2>
             

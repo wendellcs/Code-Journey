@@ -1,10 +1,16 @@
 import clsx from "clsx"
 import { AuroraOne } from "./AuroraOne"
 import { AuroraTwo } from "./AuroraTwo"
+import { AuroraThree } from "./AuroraThree"
+import { AuroraFour } from "./AuroraFour"
+import { AuroraFive } from "./AuroraFive"
 
 const auroras = {
     one: AuroraOne,
-    two: AuroraTwo
+    two: AuroraTwo,
+    three: AuroraThree,
+    four: AuroraFour,
+    five: AuroraFive
 }
 
 type AuroraType = keyof typeof auroras

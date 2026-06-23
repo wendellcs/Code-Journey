@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom"
 import { Header } from "./Components/Header"
+import { Footer } from "./Components/Footer"
 import './assets/css/main.css'
 
 function App() {
   return (
-    <div className="body-gradient min-h-dvh">
+    <div className="bg-main-gradient">
       <Header/>
       <Outlet/>
+      <Footer/>
     </div>
   )
 }

@@ -1,11 +1,14 @@
 import { Banner } from "../../Components/Banner"
-import { FaRegStar } from "react-icons/fa";
-import { ModuleCard } from "../../Components/ModuleCard";
+import { FaRegStar } from "react-icons/fa"
+import { ModuleCard } from "../../Components/ModuleCard"
+import { Students } from "../../Components/Students"
 
-import { BsGraphUpArrow, BsPeopleFill } from "react-icons/bs";
-import { IoTrophyOutline } from "react-icons/io5";
+import { BsGraphUpArrow, BsPeopleFill } from "react-icons/bs"
+import { IoTrophyOutline } from "react-icons/io5"
+import { Aurora } from "../../Components/Aurora"
 
 import profileImage from '../../assets/images/profile-example.png'
+import { Star } from "../../Components/Star"
 
 export const Home = () => {
     // Provisório
@@ -90,7 +93,19 @@ export const Home = () => {
         <main>
             <Banner />
 
-            <section className="text-center py-15">
+            <section className="text-center py-15 relative overflow-clip bg-main-aurora">
+                <Aurora type={"three"} className="top-0 right-0 animate-float" />
+                <Aurora type={"four"} className="animate-float" />
+
+                <Star starType = {{size: 'big', color: 'white', position_top: '5%', position_left: '10%'}}/>
+                <Star starType = {{size: 'big', color: 'white', position_top: '15.4%', position_left: '73.4%'}}/>
+                <Star starType = {{size: 'big', color: 'lightblue', position_top: '54%', position_left: '40%'}}/>
+                <Star starType = {{size: 'big', color: 'cyan', position_top: '23.5%', position_left: '95.4%'}}/>
+                <Star starType = {{size: 'big', color: '#2cf725', position_top: '83.5%', position_left: '95.4%'}}/>
+                <Star starType = {{size: 'big', color: '#D263B6', position_top: '48.5%', position_left: '54.4%'}}/>
+                <Star starType = {{size: 'big', color: '#921468', position_top: '81.5%', position_left: '18.4%'}}/>
+                <Star starType = {{size: 'big', color: 'yellow', position_top: '61.5%', position_left: '7.4%'}}/>
+
                 <div className="my-10 border-gradient w-70 p-2 m-auto rounded-lg flex gap-2.5 justify-center items-center flex-row">
                     <FaRegStar className="text-2xl text-pink-500" /> <h3 className="text-lg text-secondary-gradient">Alunos em destaque</h3>
                 </div>
@@ -108,6 +123,7 @@ export const Home = () => {
 
                 <div className="w-min mx-auto rounded-2xl border border-transparent p-10 bg-origin-border [background:linear-gradient(var(--color-metrics-background),var(--color-metrics-background))_padding-box,linear-gradient(90deg,rgba(137,11,114,0.92)_0%,#D773FF_43%,#2E4F78_71%,#ADD2FF_96%)_border-box]">
                     <div className="text-left flex justify-center gap-10">
+                        <Aurora type={"five"} className="animate-float left-0 rotate-20" />
                         <div className="flex items-center gap-5">
                             <div className="border border-purple-icon-border bg-purple-icon-background rounded-lg">
                                 <BsPeopleFill className="text-5xl m-4 text-purple-icon" />
@@ -143,6 +159,8 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                <Students />
             </section>
         </main>
     )

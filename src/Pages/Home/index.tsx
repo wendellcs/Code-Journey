@@ -97,22 +97,22 @@ export const Home = () => {
                 <Aurora type={"three"} className="top-0 right-0 animate-float" />
                 <Aurora type={"four"} className="animate-float" />
 
-                <Star starType = {{size: 'big', color: 'white', position_top: '5%', position_left: '10%'}}/>
-                <Star starType = {{size: 'big', color: 'white', position_top: '15.4%', position_left: '73.4%'}}/>
-                <Star starType = {{size: 'big', color: 'lightblue', position_top: '54%', position_left: '40%'}}/>
-                <Star starType = {{size: 'big', color: 'cyan', position_top: '23.5%', position_left: '95.4%'}}/>
-                <Star starType = {{size: 'big', color: '#2cf725', position_top: '83.5%', position_left: '95.4%'}}/>
-                <Star starType = {{size: 'big', color: '#D263B6', position_top: '48.5%', position_left: '54.4%'}}/>
-                <Star starType = {{size: 'big', color: '#921468', position_top: '81.5%', position_left: '18.4%'}}/>
-                <Star starType = {{size: 'big', color: 'yellow', position_top: '61.5%', position_left: '7.4%'}}/>
+                <Star starType={{ size: 'big', color: 'white', position_top: '5%', position_left: '10%' }} />
+                <Star starType={{ size: 'big', color: 'white', position_top: '15.4%', position_left: '73.4%' }} />
+                <Star starType={{ size: 'big', color: 'lightblue', position_top: '54%', position_left: '40%' }} />
+                <Star starType={{ size: 'big', color: 'cyan', position_top: '23.5%', position_left: '95.4%' }} />
+                <Star starType={{ size: 'big', color: '#2cf725', position_top: '83.5%', position_left: '95.4%' }} />
+                <Star starType={{ size: 'big', color: '#D263B6', position_top: '48.5%', position_left: '54.4%' }} />
+                <Star starType={{ size: 'big', color: '#921468', position_top: '81.5%', position_left: '18.4%' }} />
+                <Star starType={{ size: 'big', color: 'yellow', position_top: '61.5%', position_left: '7.4%' }} />
 
                 <div className="my-10 border-gradient w-70 p-2 m-auto rounded-lg flex gap-2.5 justify-center items-center flex-row">
                     <FaRegStar className="text-2xl text-pink-500" /> <h3 className="text-lg text-secondary-gradient">Alunos em destaque</h3>
                 </div>
 
-                <h2 className="text-2xl">Os alunos que <span className="gradient text-gradient text-2xl">mais dominam tecnologias</span></h2>
+                <h2 className="text-2xl relative z-10">Os alunos que <span className="gradient text-gradient text-2xl">mais dominam tecnologias</span></h2>
 
-                <div className="my-20 px-20 flex gap-10 justify-center">
+                <div className="my-20 px-20 flex gap-10 justify-center relative z-10">
                     {Object.values(students).map((module, index) => (
                         <ModuleCard
                             key={index}
@@ -122,8 +122,8 @@ export const Home = () => {
                 </div>
 
                 <div className="w-min mx-auto rounded-2xl border border-transparent p-10 bg-origin-border [background:linear-gradient(var(--color-metrics-background),var(--color-metrics-background))_padding-box,linear-gradient(90deg,rgba(137,11,114,0.92)_0%,#D773FF_43%,#2E4F78_71%,#ADD2FF_96%)_border-box]">
-                    <div className="text-left flex justify-center gap-10">
-                        <Aurora type={"five"} className="animate-float left-0 rotate-20" />
+                    <Aurora type={"five"} className="animate-float left-0 rotate-20" />
+                    <div className="text-left flex justify-center gap-10 relative z-1">
                         <div className="flex items-center gap-5">
                             <div className="border border-purple-icon-border bg-purple-icon-background rounded-lg">
                                 <BsPeopleFill className="text-5xl m-4 text-purple-icon" />

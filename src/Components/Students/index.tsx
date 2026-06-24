@@ -3,7 +3,7 @@ import { StudentCard } from "../StudentCard";
 
 export const Students = () => {
     return (
-        <section className="mt-20">
+        <section className="mt-20 relative z-1">
             <h2 className="text-2xl">Todos os alunos</h2>
 
             <div className="flex items-center gap-10 justify-center mt-10">

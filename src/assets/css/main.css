@@ -3,9 +3,6 @@
 @theme {
     --font-family-style: 'Tektur', sans-serif;
 
-    /* --background-image-primary-gradient: linear-gradient(to right, #5511B5 0%, #7B1DFF 48%, #AE00FF 88%);
-    --background-image-secondary-gradient: linear-gradient(to right, #199FFF 8%, #741CAE 41%, #003FDD 75%);  */
-
     /* Header / Footer Background */
     --background-image-primary-gradient: linear-gradient(87.22deg, rgb(20, 8, 36) 1.45%,rgb(46, 12, 58) 26.02%, rgb(38, 34, 66) 52.47%, rgb(28, 18, 42) 73.73%, rgb(28, 11, 51) 99.72%);
     --background-image-primary-gradient-transparent: linear-gradient(87.22deg, rgba(20, 8, 36, 0.8) 1.45%, rgba(46, 12, 58, 0.8) 26.02%, rgba(38, 34, 66, 0.8) 52.47%, rgba(28, 18, 42, 0.8) 73.73%, rgba(28, 11, 51, 0.8) 99.72%);
@@ -117,6 +114,14 @@
 
     --background-image-grad-mod1: linear-gradient(90deg, #AECDFB 0%, #408ABF 50.96%, #052388 100%);
 
+    /* Form */
+    --color-form-background: rgba(46, 12, 58, 0.4);
+    --shadow-form: 0px 0px 80px 10px rgba(116, 28, 174, 0.3);
+
+    --shadow-input: 0px 0px 30px 5px #441C5E;
+    --color-input: rgba(5, 7, 37, 0.5);
+
+
     /* Animations */
     --animate-float: float 8s ease-in-out infinite;
     --animate-float-left: float-aurora-left 8s ease-in-out infinite;
@@ -153,6 +158,4 @@
 @import './components/gradients.css';
 @import './components/buttons.css';
 @import './components/icons.css';
-@import './components/stars.css';
-@import './components/cards.css';
 @import './utilities/utilities.css';

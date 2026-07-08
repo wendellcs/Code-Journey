@@ -4,4 +4,12 @@
     body {
         @apply text-white font-family-style;
     }
+
+    button, select {
+        @apply cursor-pointer outline-0
+    }
+
+    input {
+        @apply outline-0
+    }
 }

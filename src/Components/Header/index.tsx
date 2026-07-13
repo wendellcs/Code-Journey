@@ -17,10 +17,6 @@ export const Header = () => {
         }
     }, [])
 
-    const headerClasses = clsx(
-        'fixed w-full z-2 transition-all noise',
-        scrolled ? 'bg-primary-gradient' : 'bg-primary-gradient-transparent'
-    )
 
     const headerDivClasses = clsx(
         'flex gap-4 w-fit mx-auto transition-all items-center',
@@ -37,7 +33,7 @@ export const Header = () => {
     )
 
     return (
-        <header className={headerClasses}>
+        <header className='fixed w-full z-2 transition-all noise bg-primary-gradient'>
             <div className={ headerDivClasses }>
                 <img src={logoDetail} alt="Logo details" className={imgClasses}/>
                 <h2 className={titleClasses}>Code <span className='text-gradient'>Journey</span></h2>

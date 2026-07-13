@@ -8,7 +8,6 @@ import { IoTrophyOutline } from "react-icons/io5"
 import { Aurora } from "../../Components/Aurora"
 
 import profileImage from '../../assets/images/profile-example.png'
-import { Star } from "../../Components/Star"
 
 export const Home = () => {
     // Provisório
@@ -97,22 +96,13 @@ export const Home = () => {
                 <Aurora type={"three"} className="top-0 right-0 animate-float" />
                 <Aurora type={"four"} className="animate-float" />
 
-                <Star starType={{ size: 'big', color: 'white', position_top: '5%', position_left: '10%' }} />
-                <Star starType={{ size: 'big', color: 'white', position_top: '15.4%', position_left: '73.4%' }} />
-                <Star starType={{ size: 'big', color: 'lightblue', position_top: '54%', position_left: '40%' }} />
-                <Star starType={{ size: 'big', color: 'cyan', position_top: '23.5%', position_left: '95.4%' }} />
-                <Star starType={{ size: 'big', color: '#2cf725', position_top: '83.5%', position_left: '95.4%' }} />
-                <Star starType={{ size: 'big', color: '#D263B6', position_top: '48.5%', position_left: '54.4%' }} />
-                <Star starType={{ size: 'big', color: '#921468', position_top: '81.5%', position_left: '18.4%' }} />
-                <Star starType={{ size: 'big', color: 'yellow', position_top: '61.5%', position_left: '7.4%' }} />
-
                 <div className="my-10 border-gradient w-70 p-2 m-auto rounded-lg flex gap-2.5 justify-center items-center flex-row">
                     <FaRegStar className="text-2xl text-pink-500" /> <h3 className="text-lg text-secondary-gradient">Alunos em destaque</h3>
                 </div>
 
-                <h2 className="text-2xl relative z-10">Os alunos que <span className="gradient text-gradient text-2xl">mais dominam tecnologias</span></h2>
+                <h2 className="text-2xl relative">Os alunos que <span className="gradient text-gradient text-2xl">mais dominam tecnologias</span></h2>
 
-                <div className="my-20 px-20 flex gap-10 justify-center relative z-10">
+                <div className="my-20 px-20 flex gap-10 justify-center relative">
                     {Object.values(students).map((module, index) => (
                         <ModuleCard
                             key={index}

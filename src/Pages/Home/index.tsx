@@ -89,9 +89,8 @@ export const Home = () => {
     } as const
 
     return (
-        <main>
+        <main className="">
             <Banner />
-
             <section className="text-center py-15 relative overflow-clip bg-main-aurora">
                 <Aurora type={"three"} className="top-0 right-0 animate-float" />
                 <Aurora type={"four"} className="animate-float" />

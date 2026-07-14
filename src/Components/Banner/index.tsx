@@ -21,7 +21,7 @@ export const Banner = () => {
             <AnimatedArrowsIcon position='left-[15%] bottom-30'/>
             <AnimatedArrowsIcon position='right-[15%] bottom-30'/>
 
-            <div className="absolute -bottom-3 left-0 w-full h-10 backdrop-blur-xs z-2"></div>
+            <div className="absolute -bottom-3 left-0 w-full h-10 backdrop-blur-xs z-1"></div>
         </section>
     )
 }

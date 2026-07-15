@@ -121,6 +121,9 @@
     --shadow-input: 0px 0px 30px 5px #441C5E;
     --color-input: rgba(5, 7, 37, 0.5);
 
+    --color-dropdown: rgba(37, 12, 58, .8);
+    --color-dropdown-options: rgba(37, 12, 58, 1);
+
 
     /* Animations */
     --animate-float: float 8s ease-in-out infinite;

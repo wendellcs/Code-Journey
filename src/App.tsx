@@ -4,6 +4,7 @@ import { Footer } from "./Components/Footer"
 import './assets/css/main.css'
 import { Stars } from "./Components/Stars"
 import { TwinklingStars } from "./Components/TwinklingStars"
+
 function App() {
   return (
     <div className="bg-main-gradient">

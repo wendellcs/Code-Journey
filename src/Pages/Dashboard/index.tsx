@@ -4,8 +4,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import clsx from "clsx";
 
 export const Dashboard = () => {
-    const [selected, setSelected] = useState<string>('Young 1')
     const [showDropdown, setShowDropdown] = useState<boolean>(false)
+    
+    const [userName, setUserName] = useState<string>('')
+    const [userSurname, setUserSurname] = useState<string>('')
+    const [selected, setSelected] = useState<string>('Young 1')
 
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -21,6 +24,27 @@ export const Dashboard = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    type Ranking = { 
+        classRanking: number,
+        generalRanking: number
+    }   
+
+    type Learned = {
+        tech: string,
+        learnedTechTopics: string[],
+        level: 1 | 2 | 3 | 4 | 5
+    }
+
+    interface Student {
+        name: string,
+        surname: string,
+        class: string,
+        learned: Learned[],
+        ranking: Ranking,
+        strengths: string[],
+        weaknesses: string[]
+    }
 
     return (
         <main className="text-center py-15 relative overflow-clip bg-main-aurora">

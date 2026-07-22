@@ -5,10 +5,12 @@ import clsx from "clsx";
 
 export const Dashboard = () => {
     const [showDropdown, setShowDropdown] = useState<boolean>(false)
-    
+    const [errorState, setErrorState] = useState<boolean>(false)
+
     const [userName, setUserName] = useState<string>('')
     const [userSurname, setUserSurname] = useState<string>('')
     const [selected, setSelected] = useState<string>('Young 1')
+
 
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -25,10 +27,10 @@ export const Dashboard = () => {
         };
     }, []);
 
-    type Ranking = { 
+    type Ranking = {
         classRanking: number,
         generalRanking: number
-    }   
+    }
 
     type Learned = {
         tech: string,
@@ -46,19 +48,42 @@ export const Dashboard = () => {
         weaknesses: string[]
     }
 
+    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        if (!userName || !userSurname) {
+            setErrorState(true)
+        }
+
+        setErrorState(false)
+
+        const student: Student = {
+            name: userName,
+            surname: userSurname,
+            class: selected,
+            learned: [],
+            ranking: {
+                classRanking: 0,
+                generalRanking: 0
+            },
+            strengths: [],
+            weaknesses: []
+        }        
+    }
+
     return (
         <main className="text-center py-15 relative overflow-clip bg-main-aurora">
             <h1 className="my-25 text-3xl">Cadastrar Aluno</h1>
 
-            <form className="text-left flex flex-col gap-5 w-full max-w-140 mx-auto bg-form-background shadow-form rounded-3xl p-10">
+            <form className="text-left flex flex-col gap-5 w-full max-w-140 mx-auto bg-form-background shadow-form rounded-3xl p-10" onSubmit={(e) => { handleSubmit(e) }}>
                 <div>
                     <label htmlFor="name">Nome</label>
-                    <input type="text" id="name" className="w-full h-10 rounded-lg mt-2.5 pl-1.5 bg-input shadow-input backdrop-blur-lg focus:border focus:border-purple-600" placeholder="Nome do aluno" />
+                    <input onChange={(e) => setUserName(e.target.value)} type="text" id="name" className="w-full h-10 rounded-lg mt-2.5 pl-1.5 bg-input shadow-input backdrop-blur-lg focus:border focus:border-purple-600" placeholder="Nome do aluno" />
                 </div>
 
                 <div>
                     <label htmlFor="surname">Sobrenome</label>
-                    <input type="text" id="surname" className="w-full h-10 rounded-lg mt-2.5 pl-1.5 bg-input shadow-input backdrop-blur-lg focus:border focus:border-purple-600" placeholder="Sobrenome do aluno" />
+                    <input onChange={(e) => setUserSurname(e.target.value)} type="text" id="surname" className="w-full h-10 rounded-lg mt-2.5 pl-1.5 bg-input shadow-input backdrop-blur-lg focus:border focus:border-purple-600" placeholder="Sobrenome do aluno" />
                 </div>
 
                 <div>

@@ -72,7 +72,7 @@ export const Dashboard = () => {
     }
 
     return (
-        <main className="text-center py-15 relative overflow-clip bg-main-aurora">
+        <main className="text-center py-15 px-5 relative overflow-clip bg-main-aurora">
             <h1 className="my-25 text-3xl">Cadastrar Aluno</h1>
 
             <form className="text-left flex flex-col gap-5 w-full max-w-140 mx-auto bg-form-background shadow-form rounded-3xl p-10" onSubmit={(e) => { handleSubmit(e) }}>

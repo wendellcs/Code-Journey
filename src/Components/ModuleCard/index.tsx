@@ -131,12 +131,13 @@ export const ModuleCard = (props: ModuleData) => {
     const currentVariant = variants[variant]
 
     return (
-        <div className={`p-px w-min rounded-3xl ${currentVariant.card.border}`}>
+        <div className={`p-px w-full max-w-140 rounded-3xl${currentVariant.card.border}`}>
             <div
                 className={`
                     text-left
                     bg-card
-                    w-87.5
+                    w-full
+                    max-w-140
                     flex
                     justify-center
                     rounded-3xl
@@ -144,7 +145,7 @@ export const ModuleCard = (props: ModuleData) => {
                     ${currentVariant.card.glow}
                 `}
             >
-                <div className="w-77.5 h-90">
+                <div className="w-full max-w-[90%] h-90">
 
                     {/* Header */}
                     <div className="flex gap-5">

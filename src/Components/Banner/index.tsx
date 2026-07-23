@@ -3,19 +3,20 @@ import { AnimatedArrowsIcon } from "../AnimatedArrowsIcon"
 
 export const Banner = () => {
     return (
-        <section className="banner bg-banner-gradient text-center flex justify-center flex-col aurora-container h-dvh relative before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_center_65%,transparent_40%,rgba(0,0,0,0.7)_100%)]">
+        <section className="banner bg-banner-gradient text-center flex justify-center flex-col aurora-container h-dvh relative before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_center_65%,transparent_40%,rgba(0,0,0,0.7)_100%)]
+        max-md:px-2.5">
             <div className="absolute inset-0 overflow-hidden">
-                <Aurora type={'two'} className={'top-0 left-0 animate-float-left'} />
+                <Aurora type={'two'} className={'top-0 left-0 animate-float-left max-lg:left-[-15%]'} />
             </div>
 
-            <div className="relative flex gap-10 flex-col">
-                <h1 className="text-[42px] text-center font-medium text-secondary-gradient">Onde o progresso dos alunos ganha vida</h1>
-                <h2 className="text-xl">Acompanhe evolução, conquistas e domínio de tecnologias em um <br />ambiente moderno e interativo</h2>
+            <div className="relative flex gap-10 flex-col max-sm:-mt-40">
+                <h1 className="text-[42px] max-md:text-3xl text-center font-medium text-secondary-gradient">Onde o progresso dos alunos ganha vida</h1>
+                <h2 className="text-xl w-full max-w-200 mx-auto max-md:text-lg">Acompanhe evolução, conquistas e domínio de tecnologias em um ambiente moderno e interativo</h2>
                 <button className="btn w-60 h-10 mx-auto btn-gradient">Explorar</button>
             </div>
 
-            <div className="absolute inset-0 overflow-hidden">
-                <Aurora type={'one'} className={'top-0 right-0 animate-float'} />
+            <div className="absolute inset-0 overflow-hidden max-md:hidden">
+                <Aurora type={'one'} className={'top-0 right-0 animate-float max-lg:right-[-15%]'} />
             </div>
 
             <AnimatedArrowsIcon position='left-[15%] bottom-30'/>

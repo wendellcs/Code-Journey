@@ -14,7 +14,7 @@ export const Stars = () => {
 
         function initParticles() {
             if (!canvas) return;
-            const qty = 20;
+            const qty = 30;
             particlesRef.current = Array.from(
                 { length: qty },
                 () => new Particle(canvas.width, canvas.height)

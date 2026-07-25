@@ -135,7 +135,7 @@ export const ModuleCard = (props: ModuleData) => {
             <div
                 className={`
                     text-left
-                    bg-card
+                    bg-card/85
                     w-full
                     max-w-140
                     flex

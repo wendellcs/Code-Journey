@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@layer components {
+    .shine::before {
+        content: '';
+        @apply w-3 h-20 bg-white absolute -left-3 rotate-30 -top-10 animate-shine
+    }
+}

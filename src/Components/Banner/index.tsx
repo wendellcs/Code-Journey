@@ -9,10 +9,10 @@ export const Banner = () => {
                 <Aurora type={'two'} className={'top-0 left-0 animate-float-left max-lg:left-[-15%]'} />
             </div>
 
-            <div className="relative flex gap-10 flex-col max-sm:-mt-40">
+            <div className="relative flex gap-10 flex-col z-1 max-sm:-mt-40">
                 <h1 className="text-[42px] max-md:text-3xl text-center font-medium text-secondary-gradient">Onde o progresso dos alunos ganha vida</h1>
                 <h2 className="text-xl w-full max-w-200 mx-auto max-md:text-lg">Acompanhe evolução, conquistas e domínio de tecnologias em um ambiente moderno e interativo</h2>
-                <button className="btn w-60 h-10 mx-auto btn-gradient">Explorar</button>
+                <button className="w-60 h-10 text-lg mx-auto bg-button-primary-gradient transition duration-500 rounded-lg hover:animate-gradient-flow hover:bg-size-[150%_100%] hover:scale-102 hover:shadow-button-purple-glow">Explorar</button>
             </div>
 
             <div className="absolute inset-0 overflow-hidden max-md:hidden">

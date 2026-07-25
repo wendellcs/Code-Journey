@@ -110,7 +110,7 @@ export const Home = () => {
                     ))}
                 </div>
 
-                <div className="w-full max-w-237 mx-auto rounded-2xl border border-transparent p-10 bg-origin-border [background:linear-gradient(var(--color-metrics-background),var(--color-metrics-background))_padding-box,linear-gradient(90deg,rgba(137,11,114,0.92)_0%,#D773FF_43%,#2E4F78_71%,#ADD2FF_96%)_border-box] max-lg:max-w-172.5 max-md:max-w-62.5">
+                <div className="w-full relative max-w-237 gradient-border bg-student-card-background mx-auto rounded-2xl p-10 max-lg:max-w-172.5 max-md:max-w-62.5">
                     <Aurora type={"five"} className="animate-float left-0 rotate-20" />
                     <div className="text-left flex w-full justify-center gap-10 relative z-1 max-md:flex-col">
                         <div className="flex items-center gap-5 max-lg:flex-col">

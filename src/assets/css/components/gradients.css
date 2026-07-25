@@ -1,18 +1,6 @@
 @import "tailwindcss";
 
 @layer components {
-    .border-gradient {
-        @apply relative
-    }
-    .border-gradient::before {
-        background: linear-gradient(90deg, rgba(122, 36, 87, 0.92) 6.25%, #e35afb 59.13%, #5293e2 72.79%), #FFFFFF;
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-
-        @apply absolute inset-0 p-px rounded-[inherit] pointer-events-none mask-exclude content-['']
-    }
-
     .text-gradient {
         background: linear-gradient(90deg, rgba(226, 14, 187, 0.92) 6.25%, #D773FF 54.13%, #5B8FCE 92.79%);
         @apply bg-clip-text text-transparent;
@@ -23,12 +11,23 @@
         @apply bg-clip-text text-transparent;
     }
 
-    .aurora-path {
-        @apply animate-float;
-        transform-origin: center;
-    }
+    .gradient-border::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
 
-    .btn-gradient {
-        background: linear-gradient(90.65deg, #270E4B 3.03%, #591CAE 48.77%, #72119E 88.03%), #D9D9D9;
+        background: linear-gradient(90deg, #5511B5, #AE00FF);
+
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask-composite: exclude;
     }
 }

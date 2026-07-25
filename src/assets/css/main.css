@@ -3,18 +3,24 @@
 @theme {
     --font-family-style: 'Tektur', sans-serif;
 
-    /* Header / Footer Background */
+    /* Main Gradients */
     --background-image-primary-gradient: linear-gradient(87.22deg, rgb(12, 5, 22) 1.45%, rgb(28, 7, 35) 26.02%, rgb(23, 20, 40) 52.47%, rgb(17, 11, 25) 73.73%, rgb(17, 7, 31) 99.72%);
     --background-image-primary-gradient-transparent: linear-gradient(87.22deg, rgba(16, 6, 29, 0.8) 1.45%, rgba(37, 10, 46, 0.8) 26.02%, rgba(30, 27, 53, 0.8) 52.47%, rgba(22, 14, 34, 0.8) 73.73%, rgba(22, 9, 41, 0.8) 99.72%);
 
+    --background-image-secondary-gradient: linear-gradient(90deg, #5511B5 0%, #7B1DFF 48%, #AE00FF 88%);
+
+    /* Button Gradients */
+    --background-image-button-primary-gradient: linear-gradient(90.65deg, #270E4B 3.03%, #591CAE 48.77%, #72119E 88.03%);
+
+    /* Banner Gradient */
     --background-image-banner-gradient: linear-gradient(180deg, rgba(10, 10, 26, 0.6) 0%, rgba(21, 8, 41, 0.6) 30%, rgba(26, 11, 46, 0.6) 60%, rgba(13, 6, 24, 0.6) 100%);
 
     /* Home Aurora Gradients */
     --background-image-main-aurora: linear-gradient(to bottom left,
-        rgba(168, 85, 247, 0.04) 15%,
-        rgba(163, 133, 233, 0.03) 28.8%,
-        rgba(59, 130, 246, 0.06) 60.1%,
-        rgba(34, 197, 94, 0.03) 94.2%);
+            rgba(168, 85, 247, 0.04) 15%,
+            rgba(163, 133, 233, 0.03) 28.8%,
+            rgba(59, 130, 246, 0.06) 60.1%,
+            rgba(34, 197, 94, 0.03) 94.2%);
 
     /* Student Card Background */
     --color-student-card-background: rgba(62, 20, 81, .2);
@@ -59,42 +65,36 @@
     --color-number-border-module-4: #C3FFB4;
 
     /* Icon Background Color */
-
     --color-icon-background-module-1: #4E7ABC;
     --color-icon-background-module-2: #FF9822;
     --color-icon-background-module-3: #EFDE17;
     --color-icon-background-module-4: #0DFF3A;
 
     /* Wrapper Background Color */
-
     --color-wrapper-background-module-1: rgba(5, 37, 137, .2);
     --color-wrapper-background-module-2: rgba(137, 60, 5, .2);
     --color-wrapper-background-module-3: rgba(137, 117, 5, .2);
     --color-wrapper-background-module-4: rgba(12, 137, 5, .2);
 
     /* Number Icon Gradient */
-
     --background-image-number-gradient-module-1: linear-gradient(205.99deg, #5789D3 8.4%, #293E5D 91.6%);
     --background-image-number-gradient-module-2: linear-gradient(205.99deg, #B85C0B 8.4%, #FACB7F 91.6%);
     --background-image-number-gradient-module-3: linear-gradient(205.99deg, #C09404 8.4%, #FFF71D 91.6%);
     --background-image-number-gradient-module-4: linear-gradient(205.99deg, #366D2B 8.4%, #5DEF55 91.6%);
 
     /* Icon Gradient */
-
     --background-image-icon-gradient-module-1: linear-gradient(180deg, #3285FF 0%, #2A4772 54%, #9FC6FF 100%);
     --background-image-icon-gradient-module-2: linear-gradient(180deg, #FFA006 0%, #F5BE71 54%, #FFF394 100%);
     --background-image-icon-gradient-module-3: linear-gradient(180deg, #FFE941 0%, #DADA12 54%, #F3CF8D 100%);
     --background-image-icon-gradient-module-4: linear-gradient(180deg, #4FF31D 0%, #0C7910 54%, #136B0B 100%);
 
     /* Bar Gradient */
-
     --background-image-bar-gradient-module-1: linear-gradient(180deg, #AECDFB 0%, #408ABF 51%, #052388 100%);
     --background-image-bar-gradient-module-2: linear-gradient(180deg, #FDD399 0%, #CA972A 51%, #845405 100%);
     --background-image-bar-gradient-module-3: linear-gradient(180deg, #F6E84C 0%, #FFFA6D 51%, #FBC44D 100%);
     --background-image-bar-gradient-module-4: linear-gradient(180deg, #6EFF00 0%, #38BE41 51%, #207423 100%);
 
     /* Card Border Gradient */
-
     --background-image-card-border-gradient-module-1: linear-gradient(180deg, #5178A7 0%, rgba(0, 0, 0, 0) 100%);
     --background-image-card-border-gradient-module-2: linear-gradient(180deg, #FFD5A4 0%, rgba(0, 0, 0, 0) 100%);
     --background-image-card-border-gradient-module-3: linear-gradient(180deg, #FFD5A4 0%, rgba(0, 0, 0, 0) 100%);
@@ -124,14 +124,18 @@
     --color-dropdown: rgba(37, 12, 58, .8);
     --color-dropdown-options: rgba(37, 12, 58, 1);
 
+    /* Button Glows */
+    --shadow-button-purple-glow: 0 0 20px 10px rgba(114, 17, 158, 0.3);
 
     /* Animations */
     --animate-float: float 8s ease-in-out infinite;
     --animate-float-left: float-aurora-left 8s ease-in-out infinite;
     --animate-arrow-load: arrow-load 2s infinite;
+    --animate-shine: shine 4s ease-in-out infinite;
+    --animate-rotate-border: rotate-border 2s linear infinite;
+    --animate-gradient-flow: gradient-flow 2s ease infinite;
 
     @keyframes float {
-
         0%,
         100% {
             transform: translate(0px, 0px) scale(1);
@@ -154,26 +158,66 @@
         }
     }
 
-    @keyframes arrow-load{
+    @keyframes arrow-load {
         0% {
             opacity: 0;
             transform: rotate(225) translate(60px 60px);
         }
+
         0% {
             opacity: 1;
         }
+
         100% {
             opacity: 0;
             transform: rotate(225) translate(-60px -60px);
         }
     }
 
+    @keyframes shine {
+
+        0%,
+        40% {
+            transform: translateX(-100%) skewX(-20deg);
+        }
+
+        60% {
+            transform: translateX(650%) skewX(-20deg);
+        }
+
+        100% {
+            transform: translateX(650%) skewX(-20deg);
+        }
+    }
+
+    @keyframes rotate-border {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes gradient-flow {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
 }
-
-
 
 @import './base/base.css';
 @import './components/gradients.css';
-@import './components/buttons.css';
+@import './components/effects.css';
 @import './components/icons.css';
 @import './utilities/utilities.css';

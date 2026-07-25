@@ -3,10 +3,10 @@ import { FaReact, FaHtml5, FaCss3Alt, FaPython, FaGitAlt, FaFigma } from "react-
 
 export const StudentCard = () => {
     return (
-        <div className='max-w-236.5 w-full mx-auto p-px border rounded-3xl mt-20 border-transparent [background:linear-gradient(var(--color-metrics-background),var(--color-metrics-background))_padding-box,linear-gradient(90deg,rgba(137,11,114,0.92)_0%,#D773FF_43%,#2E4F78_71%,#ADD2FF_96%)_border-box] max-md:max-w-150 max-sm:max-w-90'>
+        <div className='max-w-236.5 w-full mx-auto relative gradient-border rounded-3xl mt-20 max-md:max-w-150 max-sm:max-w-90'>
             <div className='bg-student-card-background p-5 rounded-3xl grid grid-cols-[1fr_1fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1'>
                 <div className='max-md:col-span-2 max-md:max-w-70 max-md:mx-auto max-md:mb-8 max-sm:col-span-1'>
-                    <h3>Nome do aluno</h3>
+                    <h3 className='mb-2'>Nome do aluno</h3>
                     <div className='rounded-2xl p-0.5 bg-secondary-gradient'>
                         <img src={imageExample} className='w-full h-50 rounded-2xl' alt="Imagem do aluno" />
                     </div>

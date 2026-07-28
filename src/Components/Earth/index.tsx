@@ -11,7 +11,7 @@ const Sphere = () => {
 
     useFrame(() => {
         if (meshRef.current) {
-            meshRef.current.rotation.y += 0.005
+            meshRef.current.rotation.y += 0.0005
         }
     })
 
@@ -25,9 +25,9 @@ const Sphere = () => {
 
 export const Earth = () => {
     return (
-        <div className='absolute left-[-40%] w-full top-[-40%] h-200 opacity-20'>
+        <div className='absolute left-[-40%] w-full top-[-40%] h-200 opacity-10'>
             <Canvas>
-                <ambientLight intensity={1.5} />
+                <ambientLight intensity={1} />
                 <Sphere />
             </Canvas>
         </div>

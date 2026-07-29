@@ -58,7 +58,7 @@ export const StudentForm = () => {
 
     return (
         <>
-            <h2 className="mb-20 text-2xl">Cadastrar Aluno</h2>
+            <h2 className="my-20 text-2xl">Cadastrar Aluno</h2>
 
             <form className="text-left flex flex-col gap-5 w-full max-w-140 mx-auto bg-form-background shadow-form rounded-3xl p-10" onSubmit={(e) => { handleSubmit(e) }}>
                 <div>

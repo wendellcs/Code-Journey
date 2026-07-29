@@ -1,6 +1,6 @@
 import { useState, useRef } from "react"
-import { ModuleSelect } from "../ModuleSelect"
-import { WeekdaySelect } from "../WeekdaySelect"
+import { ModuleSelect } from "../../FormControls/ModuleSelect"
+import { WeekdaySelect } from "../../FormControls/WeekdaySelect"
 import axios from "axios"
 
 export const ClassForm = () => {

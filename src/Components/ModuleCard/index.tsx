@@ -1,6 +1,6 @@
 import { LiaCrownSolid } from "react-icons/lia";
 import { TiStarOutline } from "react-icons/ti";
-import { ProgressBar } from '../../Components/ProgressBar'
+import { ProgressBar } from '../Visuals/ProgressBar'
 import { FaCode } from "react-icons/fa";
 
 interface Student {

@@ -1,7 +1,7 @@
 import { FaSearch } from "react-icons/fa";
 import { StudentCard } from "../StudentCard";
 import { useState } from "react";
-import { Earth } from "../../Components/Earth"
+import { Earth } from "../UI/Earth"
 import clsx from "clsx";
 
 export const Students = () => {

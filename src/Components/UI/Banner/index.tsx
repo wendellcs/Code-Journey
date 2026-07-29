@@ -1,5 +1,5 @@
-import { Aurora } from "../Aurora"
-import { AnimatedArrowsIcon } from "../AnimatedArrowsIcon"
+import { Aurora } from "../../Visuals/Aurora"
+import { AnimatedArrowsIcon } from "../../Visuals/AnimatedArrowsIcon"
 
 export const Banner = () => {
     return (

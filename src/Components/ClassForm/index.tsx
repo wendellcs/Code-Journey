@@ -1,6 +1,7 @@
 import { useState, useRef } from "react"
 import { ModuleSelect } from "../ModuleSelect"
 import { WeekdaySelect } from "../WeekdaySelect"
+import axios from "axios"
 
 export const ClassForm = () => {
     const [classTime, setClassTime] = useState('')
@@ -9,14 +10,27 @@ export const ClassForm = () => {
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault()
 
         if (!classTime || !selected || !weekday){
             return
         }
 
-        
+        // Criar limite de horários
+
+        const classData = {
+            module: selected,
+            day_of_week: weekday,
+            class_time: classTime
+        }
+
+        try {
+            await axios.post('http://127.0.0.1:8000/classes/add', classData)
+            alert('Turma criada') // Criar um popup
+        } catch (e){
+            console.error(e)
+        }
     }
 
     return (

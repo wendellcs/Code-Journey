@@ -1,4 +1,4 @@
-import logo from '../../assets/images/logo-detail.svg'
+import logo from '../../../assets/images/logo-detail.svg'
 export const Footer = () => {
     return (
         <footer className="h-78 text-center py-10 bg-primary-gradient-transparent">

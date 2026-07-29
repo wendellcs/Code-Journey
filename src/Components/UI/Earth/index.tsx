@@ -3,7 +3,7 @@ import { useTexture } from '@react-three/drei'
 import { useRef } from 'react'
 import * as THREE from 'three'
 
-import earthTexture from '../../assets/images/earth-texture.jpg'
+import earthTexture from '../../../assets/images/earth-texture.jpg'
 
 const Sphere = () => {
     const meshRef = useRef<THREE.Mesh>(null)

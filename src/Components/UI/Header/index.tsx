@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import logoDetail from '../../assets/images/logo-detail.svg'
+import logoDetail from '../../../assets/images/logo-detail.svg'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 

@@ -8,7 +8,7 @@ export const Students = () => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
 
     return (
-        <section className="mt-20 relative z-1">
+        <section className="mt-20 relative z-1 overflow-hidden">
             <Earth />
             <h2 className="text-2xl">Todos os alunos</h2>
 

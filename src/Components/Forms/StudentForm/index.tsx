@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ModuleSelect } from "../ModuleSelect"
+import { ModuleSelect } from "../../FormControls/ModuleSelect"
 
 export const StudentForm = () => {
     const [errorState, setErrorState] = useState<boolean>(false)

@@ -1,11 +1,11 @@
-import { Banner } from "../../Components/Banner"
+import { Banner } from "../../Components/UI/Banner"
 import { FaRegStar } from "react-icons/fa"
 import { ModuleCard } from "../../Components/ModuleCard"
 import { Students } from "../../Components/Students"
 
 import { BsGraphUpArrow, BsPeopleFill } from "react-icons/bs"
 import { IoTrophyOutline } from "react-icons/io5"
-import { Aurora } from "../../Components/Aurora"
+import { Aurora } from "../../Components/Visuals/Aurora"
 
 import profileImage from '../../assets/images/profile-example.png'
 

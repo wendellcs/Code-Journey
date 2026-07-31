@@ -66,6 +66,11 @@ export const StudentForm = () => {
             setErrorState(true)
         }
 
+        if (Number(userAge) < 12){
+            alert('O aluno precisa ter pelo menos 12 anos.')
+            return
+        }
+
         const class_id = await getStudentClassId()
 
         if (!class_id) return alert('Turma não encontrada')

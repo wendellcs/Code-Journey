@@ -53,7 +53,7 @@ export const StudentForm = () => {
 
         try {
             const response = await axios.get(`http://127.0.0.1:8000/classes/find?module=${studentClassData.module}&day_of_week=${studentClassData.day_of_week}&class_time=${studentClassData.class_time}`)
-            return response.data
+            return response.data.id
         } catch (e) {
             console.error(e)
         }
@@ -75,8 +75,6 @@ export const StudentForm = () => {
 
         if (!class_id) return alert('Turma não encontrada')
         
-        console.log(typeof userTag)
-
         setErrorState(false)
 
         const student: Student = {
@@ -86,8 +84,6 @@ export const StudentForm = () => {
             class_id: class_id,
             tag: userTag
         }
-
-        console.log(student)
         
         try {
             await axios.post('http://127.0.0.1:8000/students/add', student)

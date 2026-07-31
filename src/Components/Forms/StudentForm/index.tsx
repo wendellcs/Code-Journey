@@ -35,6 +35,7 @@ export const StudentForm = () => {
         first_name: string,
         last_name: string,
         age: number,
+        current_module: string,
         class_id: string,
         tag: string | undefined
     }
@@ -81,6 +82,7 @@ export const StudentForm = () => {
             first_name: userName,
             last_name: userSurname,
             age: Number(userAge),
+            current_module: selected,
             class_id: class_id,
             tag: userTag
         }

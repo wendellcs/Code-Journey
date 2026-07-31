@@ -9,6 +9,7 @@ interface Student {
     id: string
     first_name: string
     last_name: string
+    current_module: string
     tag: string | null
     age: number
     class_id: string
@@ -17,9 +18,6 @@ interface Student {
 
 export const Students = () => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
-
-    const data = { first_name: 'Aluno', last_name: 'Teste', class: 'Young 3' }
-
     const [students, setStudents] = useState<Student[] | null>(null)
 
     useEffect(() => {
@@ -60,7 +58,7 @@ export const Students = () => {
             <div>
                 {students && students.length > 0 && students.map((student) => {
                     return (
-                        <StudentCard key={student.id} studentData={{first_name: student.first_name, last_name: student.last_name, class: 'Young 3'}}/>
+                        <StudentCard key={student.id} studentData={{first_name: student.first_name, last_name: student.last_name, class: student.current_module}}/>
                     )
                 })}
             </div>

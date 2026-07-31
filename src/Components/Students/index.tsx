@@ -7,6 +7,8 @@ import clsx from "clsx";
 export const Students = () => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
 
+    const data = {first_name: 'Aluno', last_name: 'Teste', class: 'Young 3'}
+
     return (
         <section className="mt-20 relative z-1 overflow-hidden">
             <Earth />
@@ -30,7 +32,7 @@ export const Students = () => {
             </form>
 
             <div>
-                <StudentCard />
+                <StudentCard studentData = {data}/>
             </div>
         </section>
     )

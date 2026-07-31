@@ -23,7 +23,7 @@ export const StudentCard = ({ studentData }: StudentCardProps) => {
                 </div>
 
                 <div className='flex flex-col text-left gap-5 ml-2 max-md:col-end-2 max-md:text-center max-md:ml-0 max-sm:col-end-auto max-sm:mb-8'>
-                    <h3 className='text-2xl'>Dados da turma</h3>
+                    <h3 className='text-2xl'>Dados do aluno</h3>
 
                     <ul className='grid gap-4 text-lg  p-2 rounded-lg'>
                         <li>Módulo: {studentData.class}</li>

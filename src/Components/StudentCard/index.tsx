@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import imageExample from '../../assets/images/profile-example.png'
 import { FaReact, FaHtml5, FaCss3Alt, FaPython, FaGitAlt, FaFigma } from "react-icons/fa";
 
@@ -11,10 +12,12 @@ type StudentCardProps = {
     studentData: Student
 }
 
+
 export const StudentCard = ({ studentData }: StudentCardProps) => {
+
     return (
         <div className='max-w-236.5 w-full mx-auto relative gradient-border rounded-3xl mt-20 max-md:max-w-150 max-sm:max-w-90'>
-            <div className='bg-student-card-background p-6 rounded-3xl grid grid-cols-[1fr_1fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1'>
+            <div className='bg-student-card-background z-2 relative p-6 rounded-3xl grid grid-cols-[1fr_1fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1'>
                 <div className='max-md:col-span-2 max-md:max-w-70 max-md:mx-auto max-md:mb-8 max-sm:col-span-1'>
                     <div className='rounded-2xl p-0.5 max-w-60 min-w-50 bg-secondary-gradient mx-auto'>
                         <img src={imageExample} className='w-full max-w-75 aspect-square rounded-2xl' alt="Imagem do aluno" />
@@ -27,8 +30,8 @@ export const StudentCard = ({ studentData }: StudentCardProps) => {
 
                     <ul className='grid gap-4 text-lg  p-2 rounded-lg'>
                         <li>Módulo: {studentData.class}</li>
-                        <li>Ranking da turma <br/> <span>#3</span></li>
-                        <li>Ranking geral <br/> <span>#15</span></li>
+                        <li>Ranking da turma <br /> <span>#3</span></li>
+                        <li>Ranking geral <br /> <span>#15</span></li>
                     </ul>
                 </div>
 

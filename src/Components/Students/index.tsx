@@ -1,13 +1,39 @@
 import { FaSearch } from "react-icons/fa";
 import { StudentCard } from "../StudentCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Earth } from "../UI/Earth"
 import clsx from "clsx";
+import axios from "axios";
+
+interface Student {
+    id: string
+    first_name: string
+    last_name: string
+    tag: string | null
+    age: number
+    class_id: string
+    created_at: string
+}
 
 export const Students = () => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
 
-    const data = {first_name: 'Aluno', last_name: 'Teste', class: 'Young 3'}
+    const data = { first_name: 'Aluno', last_name: 'Teste', class: 'Young 3' }
+
+    const [students, setStudents] = useState<Student[] | null>(null)
+
+    useEffect(() => {
+        async function get_students() {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/students/all')
+                setStudents(response.data)
+            } catch (e) {
+                console.error(e)
+            }
+        }
+
+        get_students()
+    }, [])
 
     return (
         <section className="mt-20 relative z-1 overflow-hidden">
@@ -32,7 +58,11 @@ export const Students = () => {
             </form>
 
             <div>
-                <StudentCard studentData = {data}/>
+                {students && students.length > 0 && students.map((student) => {
+                    return (
+                        <StudentCard key={student.id} studentData={{first_name: student.first_name, last_name: student.last_name, class: 'Young 3'}}/>
+                    )
+                })}
             </div>
         </section>
     )

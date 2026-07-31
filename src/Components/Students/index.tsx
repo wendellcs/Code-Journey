@@ -20,11 +20,15 @@ export const Students = () => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
     const [students, setStudents] = useState<Student[] | null>(null)
 
+    const [filter, setFilter] = useState<string>('students')
+    const [limit, setLimit] = useState<number>(4)
+    const [currentPage, setCurrentPage] = useState<number>(1)
+
     useEffect(() => {
         async function get_students() {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/students/all')
-                setStudents(response.data)
+                const response = await axios.get('http://127.0.0.1:8000/students')
+                setStudents(response.data.students)
             } catch (e) {
                 console.error(e)
             }

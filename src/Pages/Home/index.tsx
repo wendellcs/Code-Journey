@@ -8,6 +8,8 @@ import { IoTrophyOutline } from "react-icons/io5"
 import { Aurora } from "../../Components/Visuals/Aurora"
 
 import profileImage from '../../assets/images/profile-example.png'
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 export const Home = () => {
     // Provisório
@@ -88,6 +90,36 @@ export const Home = () => {
         }
     } as const
 
+    type RegisteredDataTotal = {
+        total_students: number
+        total_technologies: number
+        total_classes: number
+    }
+
+    type Metrics = {
+        techs_metrics: number
+    }
+
+    const [registeredDataTotal, setRegisteredDataTotal] = useState<RegisteredDataTotal | null>(null)
+    const [metrics, setMetrics] = useState<Metrics | null>(null)
+
+    useEffect(() => {
+        async function getStudentsTotal() {
+            try {
+                const responseGeneral = await axios.get('http://127.0.0.1:8000/general/total')
+                console.log(responseGeneral.data)
+                setRegisteredDataTotal(responseGeneral.data)
+
+                const responseMetrics = await axios.get('http://127.0.0.1:8000/general/metrics')
+                setMetrics({techs_metrics: responseMetrics.data.total})
+            } catch (e) {
+                console.error(e)
+            }
+        }
+
+        getStudentsTotal()
+    }, [])
+
     return (
         <main className="">
             <Banner />
@@ -118,10 +150,10 @@ export const Home = () => {
                                 <BsPeopleFill className="text-5xl m-4 text-purple-icon" />
                             </div>
                             <div className="min-w-40 flex flex-col max-lg:items-center">
-                                <p className="text-[28px] font-medium">248</p>
+                                <p className="text-[28px] font-medium">{registeredDataTotal?.total_students ?? 0}</p>
                                 <p className="text-sm text-secondary">Alunos competindo</p>
 
-                                <p className="text-increase-indicator">+20 essa semana</p>
+                                <p className="text-increase-indicator">+{registeredDataTotal?.total_students ?? 0} essa semana</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-5 max-lg:flex-col">
@@ -129,10 +161,10 @@ export const Home = () => {
                                 <IoTrophyOutline className="text-5xl m-4 text-blue-icon" />
                             </div>
                             <div className="min-w-40 flex flex-col max-lg:items-center">
-                                <p className="text-[28px] font-medium">1.240</p>
+                                <p className="text-[28px] font-medium">{registeredDataTotal?.total_technologies ?? 0}</p>
                                 <p className="text-sm text-secondary">Tecnologias dominadas</p>
 
-                                <p className="text-increase-indicator">+85 essa semana</p>
+                                <p className="text-increase-indicator">+{metrics?.techs_metrics ?? 0} essa semana</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-5 max-lg:flex-col">
@@ -140,7 +172,7 @@ export const Home = () => {
                                 <BsGraphUpArrow className="text-5xl m-4 text-green-icon" />
                             </div>
                             <div className="min-w-40 flex flex-col max-lg:items-center">
-                                <p className="text-[28px] font-medium">92%</p>
+                                <p className="text-[28px] font-medium">100%</p>
                                 <p className="text-sm text-secondary">Média de evolução</p>
 
                                 <p className="text-increase-indicator">+6% essa semana</p>

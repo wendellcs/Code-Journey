@@ -1,5 +1,5 @@
 import { StudentCard } from "../StudentCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Earth } from "../UI/Earth"
 import clsx from "clsx";
 import axios from "axios";
@@ -35,26 +35,42 @@ export const Students = () => {
     const isFirstPage = pageData.current_page <= 1
     const isLastPage = pageData.current_page >= pageData.total_pages
 
+
+    const divRef = useRef<HTMLDivElement>(null)
+
+    const handleScrollToTop = () => {
+        if (divRef.current) {
+            divRef.current.scrollIntoView({
+                block: 'start',
+                behavior: 'smooth'
+            })
+        }
+    }
+
+
     const handleNextPage = () => {
         if (!isLastPage) {
             setPageData((prev) => ({ ...prev, current_page: prev.current_page + 1 }))
+            handleScrollToTop()
         }
     }
 
     const handlePrevPage = () => {
         if (!isFirstPage) {
             setPageData((prev) => ({ ...prev, current_page: prev.current_page - 1 }))
+            handleScrollToTop()
         }
     }
 
     const handleFirstPage = () => {
         setPageData((prev) => ({ ...prev, current_page: 1 }))
+        handleScrollToTop()
     }
 
     const handleLastPage = () => {
-        setPageData((prev) => ({ ...prev, current_page: prev.total_pages}))
+        setPageData((prev) => ({ ...prev, current_page: prev.total_pages }))
+        handleScrollToTop()
     }
-
 
     useEffect(() => {
         async function get_students() {
@@ -76,7 +92,7 @@ export const Students = () => {
     }, [pageData.current_page])
 
     return (
-        <section className="mt-20 relative z-1 overflow-hidden">
+        <section className="mt-20 relative z-1 overflow-hidden" ref={divRef}>
             <Earth />
             <h2 className="text-2xl">Todos os alunos</h2>
 

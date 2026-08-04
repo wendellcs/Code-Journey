@@ -72,8 +72,8 @@ export const Students = () => {
             </div>
 
             {studentsFromSearch && studentsFromSearch.length > 0 ?
-                <Pagination divRef={divRef} pageData={searchPageData} setPageData={setSearchPageData} />
-                : <Pagination divRef={divRef} pageData={pageData} setPageData={setPageData} />}
+                <Pagination elementRef={divRef} pageData={searchPageData} setPageData={setSearchPageData} />
+                : <Pagination elementRef={divRef} pageData={pageData} setPageData={setPageData} />}
 
         </section>
     )

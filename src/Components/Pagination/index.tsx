@@ -6,18 +6,18 @@ import React from "react";
 
 interface PaginationProps {
     pageData: PageData
-    divRef: RefObject<HTMLDivElement | null>
+    elementRef: RefObject<HTMLDivElement | null>
     setPageData: React.Dispatch<React.SetStateAction<PageData>>
 }
 
-export const Pagination = ({divRef, pageData, setPageData}:PaginationProps) => {
+export const Pagination = ({elementRef, pageData, setPageData}:PaginationProps) => {
 
     const isFirstPage = pageData.current_page <= 1
     const isLastPage = pageData.current_page >= pageData.total_pages
 
     const handleScrollToTop = () => {
-        if (divRef?.current) {
-            divRef.current.scrollIntoView({
+        if (elementRef?.current) {
+            elementRef.current.scrollIntoView({
                 block: 'start',
                 behavior: 'smooth'
             })

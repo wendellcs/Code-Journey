@@ -1,5 +1,5 @@
 import { StudentCard } from "../StudentCard";
-import { useState, useEffect, useRef, useEffectEvent } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Earth } from "../UI/Earth"
 import axios from "axios";
 import { SearchComponent } from "../FormControls/SearchComponent";

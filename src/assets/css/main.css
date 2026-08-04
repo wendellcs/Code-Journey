@@ -1,16 +1,7 @@
 @import "tailwindcss";
 
-.tag-panhead {
-    /* background-size: 200% 200%; */
-
-}
-
 @theme {
     --font-family-style: 'Tektur', sans-serif;
-
-
-    --background-image-tag-gradient: linear-gradient(270deg, #a855f7, #ec4899, #a855f7);
-
 
     /* Main Gradients */
     --background-image-primary-gradient: linear-gradient(87.22deg, rgb(12, 5, 22) 1.45%, rgb(28, 7, 35) 26.02%, rgb(23, 20, 40) 52.47%, rgb(17, 11, 25) 73.73%, rgb(17, 7, 31) 99.72%);

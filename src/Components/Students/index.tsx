@@ -62,11 +62,11 @@ export const Students = () => {
             <div>
                 {(studentsFromSearch?.length == 0 && students && students.length > 0) ? students.map((student) => {
                     return (
-                        <StudentCard key={student.id} studentData={{ first_name: student.first_name, last_name: student.last_name, class: student.current_module }} />
+                        <StudentCard key={student.id} studentData={student} />
                     )
                 }) : studentsFromSearch.map((student) => {
                     return (
-                        <StudentCard key={student.id} studentData={{ first_name: student.first_name, last_name: student.last_name, class: student.current_module }} />
+                        <StudentCard key={student.id} studentData={student} />
                     )
                 })}
             </div>

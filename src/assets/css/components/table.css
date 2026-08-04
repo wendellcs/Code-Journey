@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@layer components {
+    .tr-style {
+        background-color: rgba(0, 0, 255, 0.082);
+    }
+
+    .tr-style:nth-child(even) {
+        background-color: rgba(128, 0, 128, 0.103);
+    }
+
+}

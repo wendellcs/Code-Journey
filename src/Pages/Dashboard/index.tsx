@@ -6,20 +6,25 @@ import { TableStudents } from "../../Components/Tables/TableStudents"
 export const Dashboard = () => {
     return (
         <main className="text-center py-15 px-5 relative overflow-clip bg-main-aurora max-md:px-0">
+            <nav>
+                <a href="#"></a>
+            </nav>
+
             <h1 className="mt-25 mb-20 text-3xl">Dashboard</h1>
 
-            <StudentForm />
+            <section className="grid grid-cols-3 max-w-380 mx-auto items-start gap-10 max-2xl:grid-cols-1">
+                <ClassForm />
 
-            <ClassForm />
+                <StudentForm />
 
-            <TechsForm/>
-
+                <TechsForm />
+            </section>
             <section>
                 <h2 className="mt-25 mb-20 text-2xl">Informações gerais</h2>
 
-                <TableStudents/>
+                <TableStudents />
             </section>
-            
+
         </main>
     )
 }

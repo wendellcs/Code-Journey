@@ -96,8 +96,8 @@ export const StudentForm = () => {
     }
 
     return (
-        <>
-            <h2 className="my-20 text-2xl">Cadastrar Aluno</h2>
+        <div>
+            <h2 className="mb-25 text-2xl max-2xl:mt-25">Cadastrar Aluno</h2>
 
             <form className="text-left flex flex-col gap-5 w-full max-w-140 mx-auto bg-form-background shadow-form rounded-3xl p-10" onSubmit={(e) => { handleSubmit(e) }}>
                 <div>
@@ -134,6 +134,6 @@ export const StudentForm = () => {
 
                 <button className="mt-6 bg-input w-50 mx-auto h-10 rounded-lg">Adicionar</button>
             </form>
-        </>
+        </div>
     )
 }

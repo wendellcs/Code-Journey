@@ -34,8 +34,8 @@ export const ClassForm = () => {
     }
 
     return (
-        <>
-            <h2 className="my-25 text-2xl">Cadastrar Turma</h2>
+        <div>
+            <h2 className="mb-25 text-2xl">Cadastrar Turma</h2>
 
             <form className="text-left flex flex-col gap-5 w-full max-w-140 mx-auto bg-form-background shadow-form rounded-3xl p-10" onSubmit={(e) => { handleSubmit(e) }}>
                 <ModuleSelect selected={selected} setSelected={setSelected} />
@@ -52,6 +52,6 @@ export const ClassForm = () => {
 
                 <button className="mt-6 bg-input w-50 mx-auto h-10 rounded-lg">Adicionar</button>
             </form>
-        </>
+        </div>
     )
 }

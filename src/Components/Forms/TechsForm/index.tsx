@@ -39,8 +39,8 @@ export const TechsForm = () => {
     }
 
     return (
-        <>
-            <h2 className="my-25 text-2xl">Cadastrar Tecnologia</h2>
+        <div>
+            <h2 className="mb-25 text-2xl max-2xl:mt-25">Cadastrar Tecnologia</h2>
 
             <form className="text-left flex flex-col gap-5 w-full max-w-140 mx-auto bg-form-background shadow-form rounded-3xl p-10" onSubmit={(e) => { handleSubmit(e) }}>
                 <div>
@@ -55,6 +55,6 @@ export const TechsForm = () => {
 
                 <button className="mt-6 bg-input w-50 mx-auto h-10 rounded-lg">Adicionar</button>
             </form>
-        </>
+        </div>
     )
 }

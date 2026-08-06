@@ -3,6 +3,7 @@ import { ClassForm } from "../../Components/Forms/ClassForm"
 import { TechsForm } from "../../Components/Forms/TechsForm"
 import { TableStudents } from "../../Components/Tables/TableStudents"
 import { TableTechs } from "../../Components/Tables/TableTechs"
+import { TableClasses } from "../../Components/Tables/TableClasses"
 
 export const Dashboard = () => {
     return (
@@ -28,6 +29,10 @@ export const Dashboard = () => {
                 <h2 className="mt-25 mb-20 text-2xl">Techs registradas</h2>
                 
                 <TableTechs/>
+
+                <h2 className="mt-25 mb-20 text-2xl">Turmas registradas</h2>
+                
+                <TableClasses/>
             </section>
 
         </main>

@@ -20,7 +20,7 @@ export const TableTechs = () => {
 
     async function getTechs() {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/techs/all?limit=12&page=${pageData.current_page}`)
+            const response = await axios.get(`http://127.0.0.1:8000/techs?limit=12&page=${pageData.current_page}`)
 
             setTechs(response.data.techs)
             setPageData({

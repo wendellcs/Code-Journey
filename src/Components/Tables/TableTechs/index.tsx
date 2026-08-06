@@ -15,6 +15,7 @@ export const TableTechs = () => {
 
     const [newName, setNewName] = useState<string>('')
     const [newIcon, setNewIcon] = useState<string>('')
+    const [newCourseId, setNewCourseId] = useState<string>('')
 
 
     async function getTechs() {
@@ -37,11 +38,44 @@ export const TableTechs = () => {
 
 
     const handleDeleteTech = (id: string) => {
+        if (!id) return
 
+        try {
+            axios.delete(`http://127.0.0.1:8000/techs/remove/${id}`)
+            alert('Tech deletada')
+            getTechs()
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     const handleSaveEdits = (id: string) => {
+        const techCurrentData = techs.find(tech => tech.id === id)
+        const editionData: Record<string, string> = {}
 
+        if (newName && newName !== techCurrentData?.name) {
+            editionData.name = newName
+        }
+
+        if (newIcon && newIcon !== techCurrentData?.tech_icon) {
+            editionData.tech_icon = newIcon
+        }
+
+        if (newCourseId && newCourseId !== techCurrentData?.course_id) {
+            editionData.class_id = newCourseId
+        }
+
+        if (Object.keys(editionData).length == 0) return
+
+        editionData.id = id
+
+        try {
+            axios.patch('http://127.0.0.1:8000/techs/edit', editionData)
+            setEditingId(null)
+            getTechs()
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     return (
@@ -54,6 +88,7 @@ export const TableTechs = () => {
                             <tr className="h-15 border-b text-lg">
                                 <th scope="col" className="w-1/6 px-4 py-2 text-center">Tech</th>
                                 <th scope="col" className="w-1/6 px-4 py-2 text-center">Ícone</th>
+                                <th scope="col" className="w-1/6 px-4 py-2 text-center">Id do curso</th>
                                 <th scope="col" className="w-1/6 px-4 py-2 text-center">Data de criação</th>
                                 <th scope="col" className="w-1/6 px-4 py-2 text-center">Gerenciar</th>
                             </tr>
@@ -78,6 +113,14 @@ export const TableTechs = () => {
                                                     "px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
                                                 disabled={!isEditingThisRow} placeholder={techs.tech_icon} onChange={(e) => setNewIcon(e.target.value)} />
+                                        </td>
+
+                                        <td className="px-2 py-2">
+                                            <input type="text"
+                                                className={clsx(
+                                                    "px-2 py-1 w-full text-center placeholder:text-white",
+                                                    isEditingThisRow && 'border-b')}
+                                                disabled={!isEditingThisRow} placeholder={techs.course_id ? techs.course_id : '-'} onChange={(e) => setNewCourseId(e.target.value)} />
                                         </td>
 
                                         <td className="px-4 py-2">

@@ -1,4 +1,5 @@
 import { StudentForm } from "../../Components/Forms/StudentForm"
+import { StudentSkillsForm } from "../../Components/Forms/StudentSkillsForm"
 import { ClassForm } from "../../Components/Forms/ClassForm"
 import { TechsForm } from "../../Components/Forms/TechsForm"
 import { TableStudents } from "../../Components/Tables/TableStudents"
@@ -14,12 +15,14 @@ export const Dashboard = () => {
 
             <h1 className="mt-25 mb-20 text-3xl">Dashboard</h1>
 
-            <section className="grid grid-cols-3 max-w-380 mx-auto items-start gap-10 max-2xl:grid-cols-1">
+            <section className="grid grid-cols-2 max-w-380 mx-auto items-start gap-10 max-2xl:grid-cols-1">
                 <ClassForm />
 
                 <StudentForm />
 
                 <TechsForm />
+
+                <StudentSkillsForm/>
             </section>
             <section>
                 <h2 className="mt-25 mb-20 text-2xl">Alunos registrados</h2>

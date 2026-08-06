@@ -5,3 +5,8 @@ export type Tech = {
     tech_icon: string
     created_at: string
 }
+
+export type TechBasicData = {
+    id: string
+    name: string
+}

@@ -24,7 +24,6 @@ export const TableClasses = () => {
             const response = await axios.get(`http://127.0.0.1:8000/classes/all?limit=12&page=${pageData.current_page}`)
 
             setClasses(response.data.classes)
-            console.log(response.data.classes)
             setPageData({
                 current_page: response.data.current_page,
                 total_pages: response.data.total_pages

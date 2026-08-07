@@ -1,3 +1,5 @@
+import type { IconName } from "../Utilities/iconMap"
+
 export type Student = {
     id: string
     first_name: string
@@ -21,10 +23,15 @@ export type StudentIndependenceLevel = {
 export type StudentSkill = {
     id: string
     student_id: string
-    technology_id: string 
+    technology_id: string
     independence_level: StudentIndependenceLevel
-    notes: string | null 
-    name: string 
+    notes: string | null
+    name: string
     tech_icon: string
     created_at: string
+}
+
+export type StudentSkillBasicData = {
+    name: string
+    tech_icon: IconName
 }

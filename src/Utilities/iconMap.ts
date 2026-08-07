@@ -9,10 +9,11 @@ import {
   SiOpenapiinitiative,
   SiPostgresql,
   SiSharp,
+  SiNodedotjs,
   SiFigma
 } from 'react-icons/si';
 
-const iconMap = {
+export const iconMap = {
   SiThealgorithms,
   SiHtml5,
   SiCss,
@@ -24,6 +25,7 @@ const iconMap = {
   SiPostgresql,
   SiSharp,
   SiFigma,
+  SiNodedotjs
 };
 
 export type IconName = keyof typeof iconMap

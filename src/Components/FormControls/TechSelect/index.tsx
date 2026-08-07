@@ -1,17 +1,20 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useMemo } from "react"
 import { IoIosArrowDown } from "react-icons/io";
 import clsx from "clsx";
 import axios from "axios";
 import type { Tech, TechBasicData } from "../../../Types/tech";
+import type { StudentSkill } from "../../../Types/student";
 
 interface TechSelectProps {
     selected: TechBasicData | null,
     setSelected: React.Dispatch<React.SetStateAction<TechBasicData>>
+    isEditMode: boolean
+    studentSkills: StudentSkill[] | []
 }
 
-export const TechSelect = ({ selected, setSelected }: TechSelectProps) => {
+export const TechSelect = ({ selected, setSelected, isEditMode, studentSkills }: TechSelectProps) => {
     const [showDropdown, setShowDropdown] = useState<boolean>(false)
-    const [techs, setTechs] = useState<Tech[] | []>([])
+    const [techs, setTechs] = useState<Tech[]>([])
 
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +42,17 @@ export const TechSelect = ({ selected, setSelected }: TechSelectProps) => {
         };
     }, []);
 
+    const normalizedStudentSkills = useMemo(() => {
+        if (!studentSkills) return [];
+
+        return studentSkills.map(tech => ({
+            id: tech.technology_id,
+            name: tech.name
+        }));
+    }, [studentSkills]);
+
+    const renderData = isEditMode ? normalizedStudentSkills : techs
+
     return (
         <div>
             <label htmlFor="class">Tech</label>
@@ -61,7 +75,7 @@ export const TechSelect = ({ selected, setSelected }: TechSelectProps) => {
                             showDropdown ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                         )}
                     >
-                        {techs && techs.length > 0 && techs.map((tech) => {
+                        {renderData && renderData.length > 0 && renderData.map((tech) => {
                             return (
                                 <p role="option" key={tech.id} className="py-2 cursor-pointer transition-all border-b last-of-type:border-none hover:text-purple-400"
                                     onClick={() => setSelected(

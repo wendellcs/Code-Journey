@@ -47,7 +47,7 @@ export const StudentSkillsForm = () => {
 
                 <div>
                     <label htmlFor="note">Observação</label>
-                    <textarea onChange={(e) => setNote(e.target.value)} id="note" className="w-full h-30 resize-none rounded-lg mt-2.5 p-2 bg-input shadow-input backdrop-blur-lg focus:border focus:border-purple-600" placeholder="Idade do aluno"></textarea>
+                    <textarea onChange={(e) => setNote(e.target.value)} id="note" className="w-full h-30 resize-none rounded-lg mt-2.5 p-2 bg-input shadow-input backdrop-blur-lg focus:border focus:border-purple-600" placeholder="Observações sobre o progresso do aluno"></textarea>
                 </div>
 
                 <button className="mt-6 bg-input w-50 mx-auto h-10 rounded-lg">Adicionar</button>

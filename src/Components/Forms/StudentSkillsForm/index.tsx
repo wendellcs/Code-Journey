@@ -8,7 +8,6 @@ import type { StudentSkill } from "../../../Types/student"
 import clsx from "clsx"
 
 import axios from "axios"
-import { ConstNode } from "three/webgpu"
 
 export const StudentSkillsForm = () => {
     const [selectedStudent, setSelectedStudent] = useState<StudentBasicData>({ id: '0', student_name: 'Selecione um aluno' })

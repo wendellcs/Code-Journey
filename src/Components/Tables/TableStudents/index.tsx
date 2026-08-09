@@ -69,7 +69,7 @@ export const TableStudents = () => {
             editionData.tag = newTag
         }
 
-        if (Object.keys(editionData).length == 0 ) return
+        if (Object.keys(editionData).length == 0) return
 
         editionData.id = id
 
@@ -80,6 +80,14 @@ export const TableStudents = () => {
         } catch (e) {
             console.error(e)
         }
+    }
+
+    const handleCancelEdit = () => {
+        setNewFirstName('')
+        setNewLastName('')
+        setNewCurrentModule('')
+        setNewTag('')
+        setEditingId(null)
     }
 
     return (
@@ -109,7 +117,7 @@ export const TableStudents = () => {
                                                 className={clsx(
                                                     "font-normal px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={student.first_name} onChange={(e) => setNewFirstName(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newFirstName : student.first_name} placeholder={student.first_name} onChange={(e) => setNewFirstName(e.target.value)} />
                                         </td>
 
                                         <td className="px-2 py-2">
@@ -117,7 +125,7 @@ export const TableStudents = () => {
                                                 className={clsx(
                                                     "px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={student.last_name} onChange={(e) => setNewLastName(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newLastName : student.last_name} placeholder={student.last_name} onChange={(e) => setNewLastName(e.target.value)} />
                                         </td>
 
                                         <td className="px-2 py-2">
@@ -125,7 +133,7 @@ export const TableStudents = () => {
                                                 className={clsx(
                                                     "px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={student.current_module} onChange={(e) => setNewCurrentModule(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newCurrentModule : student.current_module} placeholder={student.current_module} onChange={(e) => setNewCurrentModule(e.target.value)} />
                                         </td>
 
                                         <td className="px-4 py-2">
@@ -133,7 +141,7 @@ export const TableStudents = () => {
                                                 className={clsx(
                                                     "field-sizing-content bg-gray-800 text-white px-2 py-1 rounded text-s font-semibold placeholder:text-white text-center",
                                                     isEditingThisRow && 'border')}
-                                                disabled={!isEditingThisRow} placeholder={student.tag ? student.tag : '-'} onChange={(e) => setNewTag(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newTag : student.tag ? student.tag : '-'} placeholder={student.tag ? student.tag : '-'} onChange={(e) => setNewTag(e.target.value)} />
                                         </td>
 
                                         <td className="px-4 py-2">
@@ -142,17 +150,24 @@ export const TableStudents = () => {
 
                                         <td className="px-4 py-2 flex gap-2 justify-center">
                                             {isEditingThisRow ?
-                                                <button className="bg-green-600 hover:bg-green-900 text-white px-3 py-1 rounded" onClick={() => handleSaveEdits(student.id)}>
-                                                    Salvar
-                                                </button>
+                                                <>
+                                                    <button className="bg-green-600 hover:bg-green-900 text-white px-3 py-1 rounded" onClick={() => handleSaveEdits(student.id)}>
+                                                        Salvar
+                                                    </button>
+                                                    <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleCancelEdit()}>
+                                                        Cancelar
+                                                    </button>
+                                                </>
                                                 :
-                                                <button className="bg-blue-600 hover:bg-blue-900 text-white px-3 py-1 rounded" onClick={() => setEditingId(student.id)}>
-                                                    Editar
-                                                </button>
+                                                <>
+                                                    <button className="bg-blue-600 hover:bg-blue-900 text-white px-3 py-1 rounded" onClick={() => setEditingId(student.id)}>
+                                                        Editar
+                                                    </button>
+                                                    <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleDeleteStudent(student.id)}>
+                                                        Excluir
+                                                    </button>
+                                                </>
                                             }
-                                            <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleDeleteStudent(student.id)}>
-                                                Excluir
-                                            </button>
                                         </td>
                                     </tr>
                                 );

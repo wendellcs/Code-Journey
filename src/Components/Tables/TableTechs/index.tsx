@@ -78,6 +78,13 @@ export const TableTechs = () => {
         }
     }
 
+    const handleCancelEdit = () => {
+        setNewName('')
+        setNewIcon('')
+        setNewCourseId('')
+        setEditingId(null)
+    }
+
     return (
         <div>
             <div className="border w-full max-w-350 mx-auto py-5 px-10 rounded-2xl max-md:px-4">
@@ -94,17 +101,17 @@ export const TableTechs = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {techs && techs.length > 0 && techs.map((techs) => {
-                                const isEditingThisRow = editingId === techs.id;
+                            {techs && techs.length > 0 && techs.map((tech) => {
+                                const isEditingThisRow = editingId === tech.id;
 
                                 return (
-                                    <tr key={techs.id} className="border-b text-md h-15 tr-style text-center">
+                                    <tr key={tech.id} className="border-b text-md h-15 tr-style text-center">
                                         <td className="px-2 py-2">
                                             <input type="text"
                                                 className={clsx(
                                                     "font-normal px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={techs.name} onChange={(e) => setNewName(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newName : tech.name} placeholder={tech.name} onChange={(e) => setNewName(e.target.value)} />
                                         </td>
 
                                         <td className="px-2 py-2">
@@ -112,7 +119,7 @@ export const TableTechs = () => {
                                                 className={clsx(
                                                     "px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={techs.tech_icon} onChange={(e) => setNewIcon(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newIcon : tech.tech_icon} placeholder={tech.tech_icon} onChange={(e) => setNewIcon(e.target.value)} />
                                         </td>
 
                                         <td className="px-2 py-2">
@@ -120,26 +127,34 @@ export const TableTechs = () => {
                                                 className={clsx(
                                                     "px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={techs.course_id ? techs.course_id : '-'} onChange={(e) => setNewCourseId(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newCourseId : tech.course_id ? tech.course_id : '-'} placeholder={tech.course_id ? tech.course_id : '-'} onChange={(e) => setNewCourseId(e.target.value)} />
                                         </td>
 
                                         <td className="px-4 py-2">
-                                            {techs.created_at.slice(0, 10).split('-').reverse().join('/')}
+                                            {tech.created_at.slice(0, 10).split('-').reverse().join('/')}
                                         </td>
 
                                         <td className="px-4 py-2 flex gap-2 justify-center">
                                             {isEditingThisRow ?
-                                                <button className="bg-green-600 hover:bg-green-900 text-white px-3 py-1 rounded" onClick={() => handleSaveEdits(techs.id)}>
-                                                    Salvar
-                                                </button>
+                                                <>
+                                                    <button className="bg-green-600 hover:bg-green-900 text-white px-3 py-1 rounded" onClick={() => handleSaveEdits(tech.id)}>
+                                                        Salvar
+                                                    </button>
+                                                    <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleCancelEdit()}>
+                                                        Cancelar
+                                                    </button>
+                                                </>
                                                 :
-                                                <button className="bg-blue-600 hover:bg-blue-900 text-white px-3 py-1 rounded" onClick={() => setEditingId(techs.id)}>
-                                                    Editar
-                                                </button>
+                                                <>
+                                                    <button className="bg-blue-600 hover:bg-blue-900 text-white px-3 py-1 rounded" onClick={() => setEditingId(tech.id)}>
+                                                        Editar
+                                                    </button>
+                                                    <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleDeleteTech(tech.id)}>
+                                                        Excluir
+                                                    </button>
+                                                </>
                                             }
-                                            <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleDeleteTech(techs.id)}>
-                                                Excluir
-                                            </button>
+
                                         </td>
                                     </tr>
                                 );

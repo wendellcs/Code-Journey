@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import imageExample from '../../assets/images/profile-example.png'
-import { FaReact, FaHtml5, FaCss3Alt, FaPython, FaGitAlt, FaFigma } from "react-icons/fa";
 import axios from 'axios';
 
 import type { Student, StudentSkillBasicData } from '../../Types/student';
@@ -102,7 +101,7 @@ export const StudentCard = ({ studentData }: StudentCardProps) => {
                                     return <Icon key={skill.name} className='icon' />
                                 })}
                             </div>
-                            
+
                             <h3 className='mt-8'>Ponto fraco</h3>
                             <div className='flex gap-3.5 mt-5 justify-center'>
                                 {bottomSkills.length > 0 && bottomSkills.map(skill => {

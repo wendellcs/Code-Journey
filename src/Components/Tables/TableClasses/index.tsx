@@ -18,7 +18,6 @@ export const TableClasses = () => {
     const [newDayOfWeek, setNewDayOfWeek] = useState<string>('')
     const [newClassTime, setNewClassTime] = useState<string>('')
 
-
     async function getClasses() {
         try {
             const response = await axios.get(`http://127.0.0.1:8000/classes/all?limit=12&page=${pageData.current_page}`)
@@ -78,6 +77,13 @@ export const TableClasses = () => {
         }
     }
 
+    const handleCancelEdit = () => {
+        setNewDayOfWeek('')
+        setNewClassTime('')
+        setNewModule('')
+        setEditingId(null)
+    }
+
     return (
         <div>
             <div className="border w-full max-w-350 mx-auto py-5 px-10 rounded-2xl max-md:px-4">
@@ -104,7 +110,7 @@ export const TableClasses = () => {
                                                 className={clsx(
                                                     "font-normal px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={c.module} onChange={(e) => setNewModule(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newModule : c.module} placeholder={c.module} onChange={(e) => setNewModule(e.target.value)} />
                                         </td>
 
                                         <td className="px-2 py-2">
@@ -112,11 +118,11 @@ export const TableClasses = () => {
                                                 className={clsx(
                                                     "px-2 py-1 w-full text-center placeholder:text-white",
                                                     isEditingThisRow && 'border-b')}
-                                                disabled={!isEditingThisRow} placeholder={c.day_of_week} onChange={(e) => setNewDayOfWeek(e.target.value)} />
+                                                disabled={!isEditingThisRow} value={isEditingThisRow ? newDayOfWeek : c.day_of_week} placeholder={c.day_of_week} onChange={(e) => setNewDayOfWeek(e.target.value)} />
                                         </td>
 
                                         <td className="px-2 py-2">
-                                            <input onChange={(e) => setNewClassTime(e.target.value)} ref={tableInputRef} type="text" placeholder={c.class_time ? c.class_time : '-'} className={clsx(
+                                            <input onChange={(e) => setNewClassTime(e.target.value)} value={isEditingThisRow ? newClassTime : c.class_time} ref={tableInputRef} type="text" placeholder={c.class_time ? c.class_time : '-'} className={clsx(
                                                 "flex justify-center items-center w-full text-center placeholder:text-white",
                                                 isEditingThisRow && 'border-b')} disabled={!isEditingThisRow} />
                                         </td>
@@ -127,17 +133,25 @@ export const TableClasses = () => {
 
                                         <td className="px-4 py-2 flex gap-2 justify-center">
                                             {isEditingThisRow ?
-                                                <button className="bg-green-600 hover:bg-green-900 text-white px-3 py-1 rounded" onClick={() => handleSaveEdits(c.id)}>
-                                                    Salvar
-                                                </button>
+                                                <>
+                                                    <button className="bg-green-600 hover:bg-green-900 text-white px-3 py-1 rounded" onClick={() => handleSaveEdits(c.id)}>
+                                                        Salvar
+                                                    </button>
+                                                    <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleCancelEdit()}>
+                                                        Cancelar
+                                                    </button>
+                                                </>
                                                 :
-                                                <button className="bg-blue-600 hover:bg-blue-900 text-white px-3 py-1 rounded" onClick={() => setEditingId(c.id)}>
-                                                    Editar
-                                                </button>
+                                                <>
+                                                    <button className="bg-blue-600 hover:bg-blue-900 text-white px-3 py-1 rounded" onClick={() => setEditingId(c.id)}>
+                                                        Editar
+                                                    </button>
+                                                    <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleDeleteClass(c.id)}>
+                                                        Excluir
+                                                    </button>
+                                                </>
                                             }
-                                            <button className="bg-red-600 hover:bg-red-950 text-white px-3 py-1 rounded" onClick={() => handleDeleteClass(c.id)}>
-                                                Excluir
-                                            </button>
+
                                         </td>
                                     </tr>
                                 );

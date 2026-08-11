@@ -2,6 +2,7 @@ import { LiaCrownSolid } from "react-icons/lia";
 import { TiStarOutline } from "react-icons/ti";
 import { ProgressBar } from '../Visuals/ProgressBar'
 import { FaCode } from "react-icons/fa";
+import { variants } from "../../Utilities/cardVariants";
 
 interface Student {
     name: string,
@@ -11,124 +12,17 @@ interface Student {
 }
 
 interface ModuleData {
-    title: string,
-    subtitle: string,
-    variant: 'blue' | 'orange' | 'yellow' | 'green',
-
-    topStudent: Student,
-    secondStudent: Student
-}
-
-const variants = {
-    blue: {
-        card: {
-            glow: 'shadow-glow-module-1',
-            border: 'bg-card-border-gradient-module-1'
-        },
-
-        avatar: {
-            border: 'bg-avatar-border-gradient-module-1'
-        },
-
-        number: {
-            border: 'border-number-border-module-1',
-            background: 'bg-number-gradient-module-1'
-        },
-
-        icon: {
-            background: 'bg-icon-background-module-1',
-            gradient: 'bg-icon-gradient-module-1'
-        },
-
-        progress: {
-            wrapper: 'bg-wrapper-background-module-1',
-            bar: 'bg-bar-gradient-module-1'
-        }
-    },
-
-    orange: {
-        card: {
-            glow: 'shadow-glow-module-2',
-            border: 'bg-card-border-gradient-module-2'
-        },
-
-        avatar: {
-            border: 'bg-avatar-border-gradient-module-2'
-        },
-
-        number: {
-            border: 'border-number-border-module-2',
-            background: 'bg-number-gradient-module-2'
-        },
-
-        icon: {
-            background: 'bg-icon-background-module-2',
-            gradient: 'bg-icon-gradient-module-2'
-        },
-
-        progress: {
-            wrapper: 'bg-wrapper-background-module-2',
-            bar: 'bg-bar-gradient-module-2'
-        }
-    },
-
-    yellow: {
-        card: {
-            glow: 'shadow-glow-module-3',
-            border: 'bg-card-border-gradient-module-3'
-        },
-
-        avatar: {
-            border: 'bg-avatar-border-gradient-module-3'
-        },
-
-        number: {
-            border: 'border-number-border-module-3',
-            background: 'bg-number-gradient-module-3'
-        },
-
-        icon: {
-            background: 'bg-icon-background-module-3',
-            gradient: 'bg-icon-gradient-module-3'
-        },
-
-        progress: {
-            wrapper: 'bg-wrapper-background-module-3',
-            bar: 'bg-bar-gradient-module-3'
-        }
-    },
-
-    green: {
-        card: {
-            glow: 'shadow-glow-module-4',
-            border: 'bg-card-border-gradient-module-4'
-        },
-
-        avatar: {
-            border: 'bg-avatar-border-gradient-module-4'
-        },
-
-        number: {
-            border: 'border-number-border-module-4',
-            background: 'bg-number-gradient-module-4'
-        },
-
-        icon: {
-            background: 'bg-icon-background-module-4',
-            gradient: 'bg-icon-gradient-module-4'
-        },
-
-        progress: {
-            wrapper: 'bg-wrapper-background-module-4',
-            bar: 'bg-bar-gradient-module-4'
-        }
-    }
+    title: string
+    subtitle: string
+    variant: string
+    topStudent: Student | null,
+    secondStudent: Student | null
 }
 
 export const ModuleCard = (props: ModuleData) => {
     const { title, subtitle, variant, topStudent, secondStudent } = props
 
-    const currentVariant = variants[variant]
+    const currentVariant = variants[variant as 'blue' | 'orange' | 'yellow' | 'green' ]
 
     return (
         <div className={`p-px w-full max-w-140 rounded-3xl${currentVariant.card.border}`}>
@@ -162,12 +56,12 @@ export const ModuleCard = (props: ModuleData) => {
                                 ${currentVariant.number.background}
                             `}
                         >
-                            <p className="text-lg font-medium">1</p>
+                            <p className="text-lg font-medium">{title[title.length - 1]}</p>
                         </div>
 
                         <div className="flex justify-between w-full">
                             <div>
-                                <h3 className="text-[14px]">
+                                <h3 className="text-[16px]">
                                     {title}
                                 </h3>
 
@@ -196,8 +90,8 @@ export const ModuleCard = (props: ModuleData) => {
 
                             <div className={`p-px rounded-full ${currentVariant.avatar.border}`}>
                                 <img
-                                    src={topStudent.avatar}
-                                    alt={`Foto de perfil de ${topStudent.name}`}
+                                    src={topStudent?.avatar}
+                                    alt={`Foto de perfil de ${topStudent?.name}`}
                                     className="rounded-full w-25"
                                 />
                             </div>
@@ -205,16 +99,17 @@ export const ModuleCard = (props: ModuleData) => {
 
                         <div className="mt-8 w-full">
                             <h4 className="text-xl font-medium">
-                                {topStudent.name}
+                                {topStudent?.name}
                             </h4>
 
                             <p className="flex items-center gap-1 my-2 text-[14px]">
                                 <TiStarOutline className="text-2xl" />
-                                {topStudent.topics} tópicos dominados
+                                {topStudent?.topics && topStudent.topics < 2 ? `${topStudent.topics } tópico dominado` : `${topStudent?.topics } tópicos dominados`}  
                             </p>
-
+                            
+                            {/* Provisório */}
                             <ProgressBar
-                                progress={topStudent.progress}
+                                progress={topStudent?.progress ? topStudent?.progress * 6 : 100}
                                 wrapperStyles={currentVariant.progress.wrapper}
                                 progressBarStyles={currentVariant.progress.bar}
                             />
@@ -228,8 +123,8 @@ export const ModuleCard = (props: ModuleData) => {
 
                             <div className={`p-px rounded-full ${currentVariant.avatar.border}`}>
                                 <img
-                                    src={secondStudent.avatar}
-                                    alt={`Foto de perfil de ${secondStudent.name}`}
+                                    src={secondStudent?.avatar}
+                                    alt={`Foto de perfil de ${secondStudent?.name}`}
                                     className="rounded-full min-w-16"
                                 />
                             </div>
@@ -237,15 +132,16 @@ export const ModuleCard = (props: ModuleData) => {
 
                         <div className="w-full">
                             <h5>
-                                {secondStudent.name}
+                                {secondStudent?.name}
                             </h5>
 
                             <p className="text-[14px] my-1">
-                                {secondStudent.topics} tópicos dominados
+                                {secondStudent?.topics && secondStudent.topics < 2 ? `${secondStudent.topics } tópico dominado` : `${secondStudent?.topics } tópicos dominados`}  
                             </p>
-
+                            
+                            {/* Provisório */}
                             <ProgressBar
-                                progress={secondStudent.progress}
+                                progress={secondStudent?.progress ? secondStudent?.progress * 4 : 100}
                                 wrapperStyles={currentVariant.progress.wrapper}
                                 progressBarStyles={currentVariant.progress.bar}
                             />

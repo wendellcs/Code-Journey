@@ -8,7 +8,7 @@ import { IoTrophyOutline } from "react-icons/io5"
 import { Aurora } from "../../Components/Visuals/Aurora"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import profileImage from '../../assets/images/profile-example.png'
+import {images} from '../../Utilities/profileImages'
 
 type RegisteredDataTotal = {
     total_students: number
@@ -102,6 +102,8 @@ export const Home = () => {
                                 subtitle: 'Backend'
                             }
                         } 
+
+                        let profileImage = images[Math.floor(Math.random() * images.length)]
 
                         const { variant, subtitle } = modules[moduleName as ModuleName]
 

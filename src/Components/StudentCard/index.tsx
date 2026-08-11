@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import imageExample from '../../assets/images/profile-example.png'
 import axios from 'axios';
 
 import type { Student, StudentSkillBasicData } from '../../Types/student';
 import { iconMap, type IconName } from '../../Utilities/iconMap';
+import { images } from '../../Utilities/profileImages';
 
 type StudentCardProps = {
     studentData: Student
@@ -60,7 +60,7 @@ export const StudentCard = ({ studentData }: StudentCardProps) => {
             <div className='bg-student-card-background z-2 relative p-6 rounded-3xl grid grid-cols-[1fr_1fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1'>
                 <div className='max-md:col-span-2 max-md:max-w-70 max-md:mx-auto max-md:mb-8 max-sm:col-span-1'>
                     <div className='rounded-2xl p-0.5 max-w-60 min-w-50 bg-secondary-gradient mx-auto'>
-                        <img src={imageExample} className='w-full max-w-75 aspect-square rounded-2xl' alt="Imagem do aluno" />
+                        <img src={images[Math.floor(Math.random() * images.length)]} className='w-full max-w-75 aspect-square rounded-2xl' alt="Imagem do aluno" />
                     </div>
                     <h3 className='mt-4 text-3xl'>{studentData.first_name + ' ' + studentData.last_name}</h3>
                 </div>

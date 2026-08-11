@@ -1,0 +1,15 @@
+import perfil_1 from '../assets/images/profile-image-1.png'
+import perfil_2 from '../assets/images/profile-image-2.png'
+import perfil_3 from '../assets/images/profile-image-3.png'
+import perfil_4 from '../assets/images/profile-image-4.png'
+import perfil_5 from '../assets/images/profile-image-5.png'
+import perfil_6 from '../assets/images/profile-image-6.png'
+import perfil_7 from '../assets/images/profile-image-7.png'
+import perfil_8 from '../assets/images/profile-image-8.png'
+import perfil_9 from '../assets/images/profile-image-9.png'
+import perfil_10 from '../assets/images/profile-image-10.png'
+import perfil_11 from '../assets/images/profile-image-11.png'
+import perfil_12 from '../assets/images/profile-image-12.png'
+import perfil_13 from '../assets/images/profile-image-13.png'
+
+export const images = [perfil_1, perfil_2, perfil_3, perfil_4, perfil_5, perfil_6, perfil_7, perfil_8, perfil_9, perfil_10, perfil_11, perfil_12, perfil_13]

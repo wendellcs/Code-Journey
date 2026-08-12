@@ -92,7 +92,7 @@ export const ModuleCard = (props: ModuleData) => {
                                 <img
                                     src={topStudent?.avatar}
                                     alt={`Foto de perfil de ${topStudent?.name}`}
-                                    className="rounded-full w-25"
+                                    className="rounded-full w-full max-w-35"
                                 />
                             </div>
                         </div>
@@ -125,7 +125,7 @@ export const ModuleCard = (props: ModuleData) => {
                                 <img
                                     src={secondStudent?.avatar}
                                     alt={`Foto de perfil de ${secondStudent?.name}`}
-                                    className="rounded-full min-w-16"
+                                    className="rounded-full min-w-16 max-w-20"
                                 />
                             </div>
                         </div>

@@ -31,9 +31,6 @@ type Leader = {
 type ModuleName = 'Young 1' | 'Young 2' | 'Young 3' | 'Young 4'
 
 export const Home = () => {
-
-
-
     const [registeredDataTotal, setRegisteredDataTotal] = useState<RegisteredDataTotal | null>(null)
     const [metrics, setMetrics] = useState<Metrics | null>(null)
     const [leaders, setLeaders] = useState<Record<string, Leader[]>>({});

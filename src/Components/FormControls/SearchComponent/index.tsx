@@ -13,7 +13,7 @@ interface SearchComponentProps {
     isSearching: boolean
 }
 
-export const SearchComponent = ({ setStudentsFromSearch, pageData, setPageData, setIsSearching, isSearching }: SearchComponentProps) => {
+export const SearchComponent = ({ setStudentsFromSearch, pageData, setPageData, setIsSearching }: SearchComponentProps) => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
     const [search, setSearch] = useState<string>('')
 

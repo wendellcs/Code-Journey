@@ -1,6 +1,5 @@
 import { StudentCard } from "../StudentCard";
 import { useState, useEffect, useRef } from "react";
-import { Earth } from "../UI/Earth"
 import axios from "axios";
 import { SearchComponent } from "../FormControls/SearchComponent";
 import type { Student } from "../../Types/student";
@@ -49,7 +48,6 @@ export const Students = () => {
 
     return (
         <section className="mt-20 relative z-1 overflow-hidden" ref={divRef}>
-            <Earth />
             <h2 className="text-2xl">Todos os alunos</h2>
 
             <form className="flex items-center gap-4 justify-center mt-10">

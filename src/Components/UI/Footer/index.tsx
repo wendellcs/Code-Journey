@@ -6,6 +6,7 @@ export const Footer = () => {
             <h2 className='text-[42px] font-medium z-1'>Code <span className='text-gradient'>Journey</span></h2>
             
             <p className='text-sm mt-10'>Code Journey &copy; Todos os direitos reservados</p>
+            <p className='text-sm mt-2'>v1.0.0</p>
         </footer>
     )
 }

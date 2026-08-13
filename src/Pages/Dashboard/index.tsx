@@ -5,8 +5,15 @@ import { TechsForm } from "../../Components/Forms/TechsForm"
 import { TableStudents } from "../../Components/Tables/TableStudents"
 import { TableTechs } from "../../Components/Tables/TableTechs"
 import { TableClasses } from "../../Components/Tables/TableClasses"
+import { useNavigate } from "react-router-dom"
 
 export const Dashboard = () => {
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        localStorage.removeItem('access_token')
+        navigate('/')
+    }
     return (
         <main className="text-center py-15 px-5 relative overflow-clip bg-main-aurora max-md:px-0">
             <nav>
@@ -38,6 +45,7 @@ export const Dashboard = () => {
                 <TableClasses/>
             </section>
 
+            <button className="mt-15 bg-red-500 w-50 h-10 rounded-lg text-lg transition hover:bg-red-950" onClick={handleLogout}>Sair</button>
         </main>
     )
 }

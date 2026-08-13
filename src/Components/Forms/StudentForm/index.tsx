@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { ClassSelect } from "../../FormControls/ClassSelect"
 import type { ClassBasicData } from "../../../Types/class"
+import { getAuthHeader } from "../../../Utilities/authService"
 
 export const StudentForm = () => {
     const [errorState, setErrorState] = useState<boolean>(false)
@@ -54,7 +55,7 @@ export const StudentForm = () => {
         }
 
         try {
-            await axios.post('http://127.0.0.1:8000/students/add', student)
+            await axios.post('http://127.0.0.1:8000/students/add', student, getAuthHeader())
             alert('Aluno adicionado com sucesso!')
         } catch (e) {
             console.error(e)

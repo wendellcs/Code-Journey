@@ -4,6 +4,7 @@ import { Pagination } from "../../Pagination";
 import { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 import axios from "axios";
+import { getAuthHeader } from "../../../Utilities/authService";
 
 export const TableClasses = () => {
     const [pageData, setPageData] = useState<PageData>({ current_page: 1, total_pages: 1 })
@@ -40,7 +41,7 @@ export const TableClasses = () => {
         if (!id) return
 
         try {
-            axios.delete(`http://127.0.0.1:8000/classes/remove/${id}`)
+            axios.delete(`http://127.0.0.1:8000/classes/remove/${id}`, getAuthHeader())
             alert('Classe deletada')
             getClasses()
         } catch (e) {
@@ -69,7 +70,7 @@ export const TableClasses = () => {
         editionData.id = id
 
         try {
-            axios.patch('http://127.0.0.1:8000/classes/edit', editionData)
+            axios.patch('http://127.0.0.1:8000/classes/edit', editionData, getAuthHeader())
             setEditingId(null)
             getClasses()
         } catch (e) {

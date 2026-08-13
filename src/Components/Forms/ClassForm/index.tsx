@@ -2,6 +2,7 @@ import { useState, useRef } from "react"
 import { ModuleSelect } from "../../FormControls/ModuleSelect"
 import { WeekdaySelect } from "../../FormControls/WeekdaySelect"
 import axios from "axios"
+import { getAuthHeader } from "../../../Utilities/authService"
 
 export const ClassForm = () => {
     const [classTime, setClassTime] = useState('')
@@ -26,7 +27,7 @@ export const ClassForm = () => {
         }
 
         try {
-            await axios.post('http://127.0.0.1:8000/classes/add', classData)
+            await axios.post('http://127.0.0.1:8000/classes/add', classData, getAuthHeader())
             alert('Turma criada') // Criar um popup
         } catch (e){
             console.error(e)

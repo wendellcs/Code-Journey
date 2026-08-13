@@ -4,6 +4,7 @@ import axios from "axios"
 import type { Student } from "../../../Types/student"
 import type { PageData } from "../../../Types/pageData"
 import clsx from "clsx"
+import { getAuthHeader } from "../../../Utilities/authService"
 
 export const TableStudents = () => {
     const [editingId, setEditingId] = useState<string | null>(null);
@@ -41,7 +42,7 @@ export const TableStudents = () => {
         if (!id) return
 
         try {
-            axios.delete(`http://127.0.0.1:8000/students/remove/${id}`)
+            axios.delete(`http://127.0.0.1:8000/students/remove/${id}`, getAuthHeader())
             alert('Aluno deletado')
             getStudents()
         } catch (e) {
@@ -74,7 +75,7 @@ export const TableStudents = () => {
         editionData.id = id
 
         try {
-            axios.patch('http://127.0.0.1:8000/students/edit', editionData)
+            axios.patch('http://127.0.0.1:8000/students/edit', editionData, getAuthHeader())
             setEditingId(null)
             getStudents()
         } catch (e) {

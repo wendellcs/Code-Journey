@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import axios from "axios"
+import { getAuthHeader } from "../../../Utilities/authService"
 
 export const TechsForm = () => {
     const [techName, setTechName] = useState<string>('')
@@ -31,7 +32,7 @@ export const TechsForm = () => {
         }
 
         try {
-            await axios.post('http://127.0.0.1:8000/techs/add', techData)
+            await axios.post('http://127.0.0.1:8000/techs/add', techData, getAuthHeader())
             alert('Tech registrada com sucesso!')
         } catch (e){
             console.error(e)

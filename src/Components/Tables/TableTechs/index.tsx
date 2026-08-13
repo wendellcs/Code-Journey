@@ -4,6 +4,7 @@ import { Pagination } from "../../Pagination";
 import { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 import axios from "axios";
+import { getAuthHeader } from "../../../Utilities/authService";
 
 
 export const TableTechs = () => {
@@ -41,7 +42,7 @@ export const TableTechs = () => {
         if (!id) return
 
         try {
-            axios.delete(`http://127.0.0.1:8000/techs/remove/${id}`)
+            axios.delete(`http://127.0.0.1:8000/techs/remove/${id}`, getAuthHeader())
             alert('Tech deletada')
             getTechs()
         } catch (e) {
@@ -70,7 +71,7 @@ export const TableTechs = () => {
         editionData.id = id
 
         try {
-            axios.patch('http://127.0.0.1:8000/techs/edit', editionData)
+            axios.patch('http://127.0.0.1:8000/techs/edit', editionData, getAuthHeader())
             setEditingId(null)
             getTechs()
         } catch (e) {

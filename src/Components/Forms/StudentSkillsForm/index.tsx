@@ -8,6 +8,7 @@ import type { StudentSkill } from "../../../Types/student"
 import clsx from "clsx"
 
 import axios from "axios"
+import { getAuthHeader } from "../../../Utilities/authService"
 
 export const StudentSkillsForm = () => {
     const [selectedStudent, setSelectedStudent] = useState<StudentBasicData>({ id: '0', student_name: 'Selecione um aluno' })
@@ -30,7 +31,7 @@ export const StudentSkillsForm = () => {
         }
 
         try {
-            await axios.post(`http://127.0.0.1:8000/students/${selectedStudent.id}/skills`, data)
+            await axios.post(`http://127.0.0.1:8000/students/${selectedStudent.id}/skills`, data, getAuthHeader())
             alert('Tudo certo')
         } catch (e) {
             console.error(e)
@@ -60,7 +61,7 @@ export const StudentSkillsForm = () => {
             console.log(editionData)
             
             try {
-                await axios.patch(`http://127.0.0.1:8000/students/${currentData?.id}/skills`, editionData)
+                await axios.patch(`http://127.0.0.1:8000/students/${currentData?.id}/skills`, editionData, getAuthHeader())
                 alert('Skills do aluno atualizadas com sucesso!')
             } catch (e) {
                 console.error(e)

@@ -55,7 +55,7 @@ export const StudentCard = ({ studentData }: StudentCardProps) => {
     return (
         <div className='max-w-236.5 w-full mx-auto relative gradient-border rounded-3xl mt-20 max-md:max-w-150 max-sm:max-w-90'>
 
-            {studentData?.tag !== '-' && <div className='tracking-widest shadow-[0_0_15px_rgba(168,85,247,0.7)] border border-purple-400 font-medium animate-gradient-shift bg-size-[200%] bg-secondary-gradient absolute -top-6 text-2xl w-fit right-5 z-10 py-1 px-3 rounded-lg'>{studentData.tag}</div>}
+            {(studentData.tag && studentData.tag !== '-') && <div className='tracking-widest shadow-[0_0_15px_rgba(168,85,247,0.7)] border border-purple-400 font-medium animate-gradient-shift bg-size-[200%] bg-secondary-gradient absolute -top-6 text-2xl w-fit right-5 z-10 py-1 px-3 rounded-lg'>{studentData.tag}</div>}
 
             <div className='bg-student-card-background z-2 relative p-6 rounded-3xl grid grid-cols-[1fr_1fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1'>
                 <div className='max-md:col-span-2 max-md:max-w-70 max-md:mx-auto max-md:mb-8 max-sm:col-span-1'>

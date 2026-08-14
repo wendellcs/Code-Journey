@@ -1,16 +1,26 @@
+import axios from "axios"
 import clsx from "clsx"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { getAuthHeader } from "../../Utilities/authService"
 export const Login = () => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
     const [token, setToken] = useState<string>('')
 
     const navigate = useNavigate()
 
-    const handleToken = () => {
-        if (token){
-            localStorage.setItem('access_token', token)
-            navigate('/dashboard')
+    const handleToken = async() => {
+        if (token) {
+            try {
+                localStorage.setItem('access_token', token)
+                await axios.get(`${import.meta.env.VITE_API_URL}/general/validate_token`, getAuthHeader())
+                
+                navigate('/dashboard')
+            } catch (e) {
+                console.error(e)
+                alert('Token inválido')
+            }
+
         }
     }
 

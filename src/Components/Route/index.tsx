@@ -17,9 +17,9 @@ export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
             try {
                 await axios.get(`${import.meta.env.VITE_API_URL}/general/validate_token`, getAuthHeader())
             } catch (e) {
+                navigate('/login')
                 console.error(e)
                 alert('Token inválido')
-                navigate('/login')
             }
         }
 

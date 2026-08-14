@@ -5,7 +5,7 @@ import type { ClassBasicData } from "../../../Types/class"
 import { getAuthHeader } from "../../../Utilities/authService"
 
 export const StudentForm = () => {
-    const [errorState, setErrorState] = useState<boolean>(false)
+    // const [errorState, setErrorState] = useState<boolean>(false)
 
     const [userName, setUserName] = useState<string>('')
     const [userSurname, setUserSurname] = useState<string>('')
@@ -33,7 +33,8 @@ export const StudentForm = () => {
         e.preventDefault()
 
         if (!userName || !userSurname || !userAge) {
-            setErrorState(true)
+            // setErrorState(true)
+            return
         }
 
         if (Number(userAge) < 12) {
@@ -43,7 +44,7 @@ export const StudentForm = () => {
 
         if (selected.id === '0') return alert('Selecione uma turma válida!')
 
-        setErrorState(false)
+        // setErrorState(false)
 
         const student: Student = {
             first_name: userName,

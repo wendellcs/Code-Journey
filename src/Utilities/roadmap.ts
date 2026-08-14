@@ -1,4 +1,4 @@
-const roadmap = [{
+export const roadmap = [{
   area: "Fundamentos",
   slug: "fundamentos",
   topics: [

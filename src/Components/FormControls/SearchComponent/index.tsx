@@ -29,7 +29,7 @@ export const SearchComponent = ({ setStudentsFromSearch, pageData, setPageData, 
         async function handleSearch() {
             if (debouncedSearch && debouncedSearch.length >= 3) {
                 try {
-                    const response = await axios.get(`http://127.0.0.1:8000/students?page=${pageData.current_page}&search=${debouncedSearch}`)
+                    const response = await axios.get(`${import.meta.env.VITE_API_URL}/students?page=${pageData.current_page}&search=${debouncedSearch}`)
 
                     setStudentsFromSearch(response.data.students)
                     setPageData({

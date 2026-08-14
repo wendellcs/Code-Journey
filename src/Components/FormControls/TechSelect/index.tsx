@@ -21,7 +21,7 @@ export const TechSelect = ({ selected, setSelected, isEditMode, studentSkills }:
     useEffect(() => {
         async function getTechs() {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/techs/all')
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/techs/all`)
                 setTechs(response.data)
             } catch (e) {
                 console.error(e)

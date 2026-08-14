@@ -21,7 +21,7 @@ export const TableClasses = () => {
 
     async function getClasses() {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/classes?limit=12&page=${pageData.current_page}`)
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/classes?limit=12&page=${pageData.current_page}`)
 
             setClasses(response.data.classes)
             setPageData({
@@ -37,11 +37,11 @@ export const TableClasses = () => {
         getClasses()
     }, [pageData.current_page])
 
-    const handleDeleteClass = (id: string) => {
+    const handleDeleteClass = async (id: string) => {
         if (!id) return
 
         try {
-            axios.delete(`http://127.0.0.1:8000/classes/remove/${id}`, getAuthHeader())
+            await axios.delete(`${import.meta.env.VITE_API_URL}/classes/remove/${id}`, getAuthHeader())
             alert('Classe deletada')
             getClasses()
         } catch (e) {
@@ -49,7 +49,7 @@ export const TableClasses = () => {
         }
     }
 
-    const handleSaveEdits = (id: string) => {
+    const handleSaveEdits = async (id: string) => {
         const classCurrentData = classes.find(c => c.id === id)
         const editionData: Record<string, string> = {}
 
@@ -70,7 +70,7 @@ export const TableClasses = () => {
         editionData.id = id
 
         try {
-            axios.patch('http://127.0.0.1:8000/classes/edit', editionData, getAuthHeader())
+            await axios.patch(`${import.meta.env.VITE_API_URL}/classes/edit`, editionData, getAuthHeader())
             setEditingId(null)
             getClasses()
         } catch (e) {

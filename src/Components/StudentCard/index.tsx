@@ -17,7 +17,7 @@ export const StudentCard = ({ studentData }: StudentCardProps) => {
     useEffect(() => {
         const getStudentSkillsSummary = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/students/${studentData.id}/skills/summary`)
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/students/${studentData.id}/skills/summary`)
                 const sortedSkills = [...response.data].sort((a, b) => a.independence_level - b.independence_level).reverse()
 
                 if (sortedSkills.length > 3) {

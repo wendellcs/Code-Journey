@@ -18,7 +18,7 @@ export const ClassSelect = ({ selected, setSelected }: ClassSelectProps) => {
     useEffect(() => {
         async function getClasses() {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/classes/all')
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/classes/all`)
                 setClasses(response.data)
             } catch (e) {
                 console.error(e)

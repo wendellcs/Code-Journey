@@ -20,7 +20,7 @@ export const StudentSelect = ({ selected, setSelected }: StudentSelectProps) => 
     useEffect(() => {
         async function getStudents() {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/students/all')
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/students/all`)
                 setStudents(response.data)
             } catch (e) {
                 console.error(e)

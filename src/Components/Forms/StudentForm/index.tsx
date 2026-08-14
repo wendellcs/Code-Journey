@@ -55,7 +55,7 @@ export const StudentForm = () => {
         }
 
         try {
-            await axios.post('http://127.0.0.1:8000/students/add', student, getAuthHeader())
+            await axios.post(`${import.meta.env.VITE_API_URL}/students/add`, student, getAuthHeader())
             alert('Aluno adicionado com sucesso!')
         } catch (e) {
             console.error(e)

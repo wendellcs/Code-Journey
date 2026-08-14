@@ -21,7 +21,7 @@ export const TableStudents = () => {
 
     async function getStudents() {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/students?limit=12&page=${pageData.current_page}`)
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/students?limit=12&page=${pageData.current_page}`)
 
             setStudents(response.data.students)
             setPageData({
@@ -42,7 +42,7 @@ export const TableStudents = () => {
         if (!id) return
 
         try {
-            axios.delete(`http://127.0.0.1:8000/students/remove/${id}`, getAuthHeader())
+            await axios.delete(`${import.meta.env.VITE_API_URL}/students/remove/${id}`, getAuthHeader())
             alert('Aluno deletado')
             getStudents()
         } catch (e) {
@@ -50,7 +50,7 @@ export const TableStudents = () => {
         }
     }
 
-    const handleSaveEdits = (id: string) => {
+    const handleSaveEdits = async (id: string) => {
         const studentCurrentData = students.find(student => student.id === id)
         const editionData: Record<string, string> = {}
 
@@ -75,7 +75,7 @@ export const TableStudents = () => {
         editionData.id = id
 
         try {
-            axios.patch('http://127.0.0.1:8000/students/edit', editionData, getAuthHeader())
+            await axios.patch(`${import.meta.env.VITE_API_URL}/students/edit`, editionData, getAuthHeader())
             setEditingId(null)
             getStudents()
         } catch (e) {

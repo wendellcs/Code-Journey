@@ -27,7 +27,7 @@ export const ClassForm = () => {
         }
 
         try {
-            await axios.post('http://127.0.0.1:8000/classes/add', classData, getAuthHeader())
+            await axios.post(`${import.meta.env.VITE_API_URL}/classes/add`, classData, getAuthHeader())
             alert('Turma criada') // Criar um popup
         } catch (e){
             console.error(e)

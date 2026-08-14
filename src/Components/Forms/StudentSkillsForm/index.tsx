@@ -31,7 +31,7 @@ export const StudentSkillsForm = () => {
         }
 
         try {
-            await axios.post(`http://127.0.0.1:8000/students/${selectedStudent.id}/skills`, data, getAuthHeader())
+            await axios.post(`${import.meta.env.VITE_API_URL}/students/${selectedStudent.id}/skills`, data, getAuthHeader())
             alert('Tudo certo')
         } catch (e) {
             console.error(e)
@@ -61,7 +61,7 @@ export const StudentSkillsForm = () => {
             console.log(editionData)
             
             try {
-                await axios.patch(`http://127.0.0.1:8000/students/${currentData?.id}/skills`, editionData, getAuthHeader())
+                await axios.patch(`${import.meta.env.VITE_API_URL}/students/${currentData?.id}/skills`, editionData, getAuthHeader())
                 alert('Skills do aluno atualizadas com sucesso!')
             } catch (e) {
                 console.error(e)
@@ -87,7 +87,7 @@ export const StudentSkillsForm = () => {
     useEffect(() => {
         const getStudentSkills = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/students/${selectedStudent.id}/skills`)
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/students/${selectedStudent.id}/skills`)
                 setStudentSkills(response.data)
             } catch (e) {
                 setStudentSkills([])

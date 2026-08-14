@@ -21,7 +21,7 @@ export const TableTechs = () => {
 
     async function getTechs() {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/techs?limit=12&page=${pageData.current_page}`)
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/techs?limit=12&page=${pageData.current_page}`)
 
             setTechs(response.data.techs)
             setPageData({
@@ -38,11 +38,11 @@ export const TableTechs = () => {
     }, [pageData.current_page])
 
 
-    const handleDeleteTech = (id: string) => {
+    const handleDeleteTech = async (id: string) => {
         if (!id) return
 
         try {
-            axios.delete(`http://127.0.0.1:8000/techs/remove/${id}`, getAuthHeader())
+            await axios.delete(`${import.meta.env.VITE_API_URL}/techs/remove/${id}`, getAuthHeader())
             alert('Tech deletada')
             getTechs()
         } catch (e) {
@@ -50,7 +50,7 @@ export const TableTechs = () => {
         }
     }
 
-    const handleSaveEdits = (id: string) => {
+    const handleSaveEdits = async (id: string) => {
         const techCurrentData = techs.find(tech => tech.id === id)
         const editionData: Record<string, string> = {}
 
@@ -71,7 +71,7 @@ export const TableTechs = () => {
         editionData.id = id
 
         try {
-            axios.patch('http://127.0.0.1:8000/techs/edit', editionData, getAuthHeader())
+            await axios.patch(`${import.meta.env.VITE_API_URL}/techs/edit`, editionData, getAuthHeader())
             setEditingId(null)
             getTechs()
         } catch (e) {

@@ -32,7 +32,7 @@ export const TechsForm = () => {
         }
 
         try {
-            await axios.post('http://127.0.0.1:8000/techs/add', techData, getAuthHeader())
+            await axios.post(`${import.meta.env.VITE_API_URL}/techs/add`, techData, getAuthHeader())
             alert('Tech registrada com sucesso!')
         } catch (e){
             console.error(e)

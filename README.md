@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# 🚀 Code Journey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O Code Journey é uma aplicação web desenvolvida para auxiliar estudantes de programação a organizar seus estudos, acompanhar seu progresso e visualizar sua evolução ao longo do tempo.
 
-Currently, two official plugins are available:
+O projeto foi desenvolvido com foco na prática de desenvolvimento Full Stack, utilizando React, TypeScript e Tailwind CSS no Front-End e Python com FastAPI no Back-End. Para o gerenciamento e armazenamento dos dados, foi utilizado o Supabase, com PostgreSQL e SQL para modelagem, criação e manipulação do banco de dados.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Funcionalidades
 
-## React Compiler
+- 📚 Organização dos conteúdos e estudos
+- 📊 Acompanhamento do progresso
+- 📈 Visualização da evolução do usuário
+- 💾 Persistência dos dados utilizando Supabase
+- 📱 Interface responsiva
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- React.js
+- TypeScript
+- Tailwind CSS 
+- Python
+- FastAPI
+- Supabase
+- Git & GitHub
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎨 Interface
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<img width="1840" height="914" alt="Captura de tela 2026-08-26 003525" src="https://github.com/user-attachments/assets/98286015-32f7-4dc0-9953-3a62f7f98067" />
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔖 Versão V1.0.0
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+A primeira versão do Code Journey representa a implementação inicial da plataforma, reunindo suas principais funcionalidades e estrutura base.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 👨‍💻 Criadores
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Desenvolvedor
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### Wendell Silva
+
+- GitHub: [Visitar GitHub](https://github.com/wendellcs)
+- LinkedIn: [Visitar Linkedin](https://www.linkedin.com/in/wendellcsilva/)
+
+### Designer
+
+#### Sophia de Oliveira
+
+- GitHub: [Visitar GitHub](https://github.com/olvsophi)
+- LinkedIn: [Visitar Linkedin](https://www.linkedin.com/in/sophia-de-oliveira-78b7331bb/)
+
+⭐ Se este projeto foi útil ou interessante para você, considere deixar uma estrela no repositório!

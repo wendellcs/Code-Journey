@@ -22,6 +22,9 @@ interface ModuleData {
 export const ModuleCard = (props: ModuleData) => {
     const { title, subtitle, variant, topStudent, secondStudent } = props
 
+    const topStudentProgress = topStudent?.progress && topStudent.progress > 0 ? 100 : 0
+    const secondStudentProgress = secondStudent?.topics ?  Math.floor(secondStudent.progress / (secondStudent.topics * 5) * 100) : undefined
+
     const currentVariant = variants[variant as 'blue' | 'orange' | 'yellow' | 'green' ]
 
     return (
@@ -107,9 +110,8 @@ export const ModuleCard = (props: ModuleData) => {
                                 {topStudent?.topics && topStudent.topics < 2 ? `${topStudent.topics } tópico dominado` : `${topStudent?.topics } tópicos dominados`}  
                             </p>
                             
-                            {/* Provisório */}
                             <ProgressBar
-                                progress={topStudent?.progress ? topStudent?.progress * 6 : 100}
+                                progress={topStudent?.progress && topStudentProgress ? topStudentProgress : 100}
                                 wrapperStyles={currentVariant.progress.wrapper}
                                 progressBarStyles={currentVariant.progress.bar}
                             />
@@ -139,9 +141,8 @@ export const ModuleCard = (props: ModuleData) => {
                                 {secondStudent?.topics && secondStudent.topics < 2 ? `${secondStudent.topics } tópico dominado` : `${secondStudent?.topics } tópicos dominados`}  
                             </p>
                             
-                            {/* Provisório */}
                             <ProgressBar
-                                progress={secondStudent?.progress ? secondStudent?.progress * 4 : 100}
+                                progress={secondStudent?.progress && secondStudentProgress? secondStudentProgress : 100}
                                 wrapperStyles={currentVariant.progress.wrapper}
                                 progressBarStyles={currentVariant.progress.bar}
                             />

@@ -77,6 +77,7 @@ export const ModuleCard = (props: ModuleData) => {
                                 className={`
                                     p-3
                                     rounded-xl
+                                    max-h-12
                                     ${currentVariant.icon.background}
                                     ${currentVariant.icon.gradient}
                                 `}

@@ -22,6 +22,7 @@ export const TechSelect = ({ selected, setSelected, isEditMode, studentSkills }:
         async function getTechs() {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/techs/all`)
+                console.log(response.data)
                 setTechs(response.data)
             } catch (e) {
                 console.error(e)
@@ -45,7 +46,9 @@ export const TechSelect = ({ selected, setSelected, isEditMode, studentSkills }:
     const normalizedStudentSkills = useMemo(() => {
         if (!studentSkills) return [];
 
-        return studentSkills.map(tech => ({
+        const studentSkillsAbove0 = studentSkills.filter(skill => Number(skill.independence_level) > 0)
+
+        return studentSkillsAbove0.map(tech => ({
             id: tech.technology_id,
             name: tech.name
         }));
